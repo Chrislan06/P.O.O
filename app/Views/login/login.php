@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
     <div id="page" class="flex">
@@ -38,7 +38,7 @@
             <div class="input-wrapper">
               <div class="label-wrapper">
                 <label for="senha"> Senha </label>
-                <a href="/app/Views/esquecisenha/esqueci.html"
+                <a href="esquec/imagesisenha/esqueci.html"
                   >Esqueceu a senha?</a
                 >
               </div>
@@ -57,14 +57,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="/app/Views/assets/eye-off.svg"
+                src="assets/images/eye-off.svg"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="/app/Views/assets/eye.svg"
+                src="assets/images/eye.svg"
                 alt=""
               />
             </div>
@@ -73,14 +73,14 @@
 
             <div class="create-account">
               Realize o registro caso ainda não esteja logado no sistema
-              <a href="/app/Views/registro/registro.html">Registrar-se</a>
+              <a href="regist/imagesro/registro.html">Registrar-se</a>
             </div>
           </form>
         </main>
       </div>
-      <img src="/app/Views/assets/loginImage.jpg" alt="Imagem colorida" />
+      <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/login.js"></script>
   </body>
 </html>
