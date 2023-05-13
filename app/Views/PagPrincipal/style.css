@@ -1,5 +1,5 @@
 :root,
-[data-bs-theme="dark"] {
+[data-bs-theme='dark'] {
   color-scheme: dark;
   --bs-body-color: #adb5bd;
   --bs-body-color-rgb: 173, 181, 189;
