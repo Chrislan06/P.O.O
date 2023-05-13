@@ -11,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="informacoesEstilo.css" />
+    <link rel="stylesheet" href="assets/css/informacoesEstilo.css" />
   </head>
   <body>
     <navbar id="navbar">
       <div class="navbar-container">
-        <img src="/app/Views/assets/hotel-solid (1).svg" alt="" />
+        <img src="assets/images/hotel-solid (1).svg" alt="" />
         <ul class="navbar-items">
           <a href="" class="navbar-item">Perfil</a>
           <a href="" class="navbar-item">Pesquisar Reservas</a>

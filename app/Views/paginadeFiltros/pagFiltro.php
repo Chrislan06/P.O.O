@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pagFiltro.css" />
+    <link rel="stylesheet" href="assets/css/pagFiltro.css" />
     <title>Document</title>
   </head>
 
@@ -39,13 +39,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>Suíte London Clingon</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado">Reservado</p>
           </div>
           <div class="informacoes">
@@ -62,13 +62,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>England</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado">Reservado</p>
           </div>
           <div class="informacoes">
@@ -85,13 +85,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>EUA</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado" style="display: none">Reservado</p>
           </div>
           <div class="informacoes">
@@ -108,13 +108,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>Brasil</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado" style="display: none">Reservado</p>
           </div>
           <div class="informacoes">
@@ -131,13 +131,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>Ceará</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado">Reservado</p>
           </div>
           <div class="informacoes">
@@ -154,13 +154,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>PSG</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado" style="display: none">Reservado</p>
           </div>
           <div class="informacoes">
@@ -177,13 +177,13 @@
       <div class="quarto">
         <div class="titulo">
           <h2>Real madrid</h2>
-          <img src="/app/Views/assets/5_estrelas.png" />
+          <img src="assets/images/5_estrelas.png" />
           <p>9.6</p>
         </div>
 
         <div class="conteudo">
           <div class="img">
-            <img src="/app/Views/assets/quarto3.jpg" alt="Imagem do quarto" />
+            <img src="assets/images/quarto3.jpg" alt="Imagem do quarto" />
             <p class="reservado">Reservado</p>
           </div>
           <div class="informacoes">
@@ -199,5 +199,5 @@
     </main>
   </body>
 
-  <script src="pagFiltro.js"></script>
+  <script src="assets/js/pagFiltro.js"></script>
 </html>

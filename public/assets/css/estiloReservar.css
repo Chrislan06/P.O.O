@@ -20,7 +20,7 @@ button {
 
 .page {
   height: 100vh;
-  background-image: url(/app/Views/assets/loginImage.jpg);
+  background-image: url(../images/loginImage.jpg);
   display: flex;
   align-items: center;
   justify-content: center;

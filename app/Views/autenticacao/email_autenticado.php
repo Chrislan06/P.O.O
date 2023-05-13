@@ -11,11 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="autenticadostyle.css" />
+    <link rel="stylesheet" href="assets/css/autenticado.css" />
   </head>
   <body>
     <div class="page">
-      <form action="/app/Views/login/index.html">
+      <form action="<?= base_url('login') ?>" method="post">
         <div class="headline">
           <h1>Email autenticado com sucesso</h1>
           <p>A senha foi enviada para o email digitado.<br /></p>

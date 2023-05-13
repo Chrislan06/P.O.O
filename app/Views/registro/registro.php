@@ -11,18 +11,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="registrostyle.css" />
+    <link rel="stylesheet" href="assets/css/registro.css" />
   </head>
   <body>
     <div id="page" class="flex">
-      <img src="/app/Views/assets/loginImage.jpg" alt="Imagem colorida" />
+      <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
       <div>
         <main>
           <div class="headline">
             <h1>Cadastre-se Agora</h1>
             <p>Realize o cadastro para utilizar o SHO.</p>
           </div>
-          <form action="/app/Views/registro/registrado/registrado.html">
+          <form action="/registro/registrado/registrado.html">
             <div class="input-wrapper">
               <label for="name">Nome</label>
               <input
@@ -69,14 +69,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="/app/Views/assets/eye-off.svg"
+                src="assets/images/eye-off.svg"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="/app/Views/assets/eye.svg"
+                src="assets/images/eye.svg"
                 alt=""
               />
             </div>
@@ -97,14 +97,14 @@
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo"
                 id="eyeTwo"
-                src="/app/Views/assets/eye-off.svg"
+                src="assets/images/eye-off.svg"
                 alt=""
               />
               <img
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo hide"
                 id="eyeTwo-hide"
-                src="/app/Views/assets/eye.svg"
+                src="assets/images/eye.svg"
                 alt=""
               />
             </div>
@@ -113,13 +113,13 @@
 
             <div class="login-account">
               Já tem uma conta? Faça o
-              <a href="/app/Views/login/index.html">Login</a>
+              <a href="/login/index.html">Login</a>
             </div>
           </form>
         </main>
       </div>
     </div>
 
-    <script src="registroscript.js"></script>
+    <script src="assets/js /registro.js"></script>
   </body>
 </html>

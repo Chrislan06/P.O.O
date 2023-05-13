@@ -16,6 +16,6 @@ class Home extends BaseController
     
     public function index()
     {
-        echo 'logado';
+        return view('reserva/cancelar');
     }
 }

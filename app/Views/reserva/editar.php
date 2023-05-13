@@ -11,11 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="editarReservastyle.css" />
+    <link rel="stylesheet" href="assets/css/editarReserva.css" />
   </head>
   <body>
     <div class="page">
-      <form action="/app/Views/editarReserva/reservaEditada/editado.html">
+      <form action="/reservaEditada/editado.html">
         <div class="headline">
           <h1>Editar Reserva</h1>
         </div>
@@ -50,6 +50,6 @@
       </form>
     </div>
 
-    <script src="editarReserva.js"></script>
+    <script src="assets/js/editarReserva.js"></script>
   </body>
 </html>
