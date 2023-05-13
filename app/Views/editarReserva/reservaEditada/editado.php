@@ -18,7 +18,7 @@
       <form action="">
         <div class="headline">
           <h1>Reserva editada com sucesso</h1>
-          <p>Os dados do cliente foram modificados com sucesso<br /></p>
+          <p>Os dados do cliente foram modificados com sucesso<br/></p>
           <p>Volte e confira as informações modificadas</p>
         </div>
         <button>Página Inicial</button>
