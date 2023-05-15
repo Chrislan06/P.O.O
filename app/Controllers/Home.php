@@ -5,22 +5,11 @@ namespace App\Controllers;
 use App\Models\UsuarioModel;
 
 class Home extends BaseController
-{
-    // public function _remap($method)
-    // {
-    //     if(!session()->has('login')){
-    //         return redirect()->to('/login');
-    //     }
-
-    //     return  $this->$method;
-    // }
-
-    
+{   
+    // Redireciona para a Pagina principal
     public function index()
     {
-        dd(session('usuario'));
-        // $this->inserirUsuario();
-        // return view('reserva/reservar');
+        
     }
 
     private function inserirUsuario()

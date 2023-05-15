@@ -57,4 +57,9 @@ class Login extends BaseController
             return redirect()->to('login')->withInput()->with('errors',$usuario->messages);
         }
     }
+
+    public function deslogar()
+    {
+        
+    }
 }
