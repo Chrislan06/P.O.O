@@ -8,7 +8,7 @@ class Login extends BaseController
 {
     public function index()
     {
-        if(!session()->has('usuario')){
+        if (!session()->has('usuario')) {
             return view('autenticacao/login');
         }
 
@@ -17,11 +17,8 @@ class Login extends BaseController
 
     public function logar()
     {
-        if(!$this->request->is('post')){
+        if (!$this->request->is('post')) {
             return redirect()->to('/');
         }
-
-        
-
-    } 
+    }
 }
