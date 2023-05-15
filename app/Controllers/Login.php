@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Entities\UsuarioEntity;
 
 class Login extends BaseController
 {
@@ -19,6 +20,13 @@ class Login extends BaseController
     {
         if (!$this->request->is('post')) {
             return redirect()->to('/');
+        }
+
+        try {
+            $usuario = new UsuarioEntity($this->request->getPost());
+            dd($usuario);
+        } catch (\Throwable $th) {
+            //throw $th;
         }
     }
 }

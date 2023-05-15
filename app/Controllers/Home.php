@@ -34,6 +34,21 @@ class Home extends BaseController
         if($result){
             echo 'Inserido';
         }
+    }
+
+    public function teste()
+    {
+        $email = 'Chrislan.com';
+        if(empty($email)){
+            echo 'Preencha o campo de Email';
+            die();
+        }
+        // var_dump(preg_match('/^([a-zA-Z]{3,})*(.)+@+([a-zA-z]{3,})+\.+com*(\.*[a-z]{1,3})$/',$email));
+        if(!preg_match('/^([a-zA-Z]{3,})*(.)+@+([a-zA-z]{3,})+\.+com*(\.*[a-z]{1,3})$/',$email)){
+            echo 'email Inválido';
+        }
         
+
     }
 }
+
