@@ -13,13 +13,13 @@ class ClienteModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nome','rg','cpf','data_nascimento'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    protected $createdField  = 'criado_em';
+    protected $updatedField  = 'atualizado_em';
     protected $deletedField  = 'deleted_at';
 
     // Validation
