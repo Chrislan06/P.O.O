@@ -9,7 +9,7 @@ class Home extends BaseController
     // Redireciona para a Pagina principal
     public function index()
     {
-        
+       echo anchor('login/logout','logout');
     }
 
     private function inserirUsuario()

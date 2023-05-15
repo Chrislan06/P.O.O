@@ -58,8 +58,10 @@ class Login extends BaseController
         }
     }
 
-    public function deslogar()
+    public function logout()
     {
-        
+        session()->remove('usuario');
+
+        return redirect()->to('/');
     }
 }
