@@ -3,6 +3,7 @@
 namespace App\Entities;
 
 use CodeIgniter\Entity\Entity;
+use DateTime;
 
 class ClienteEntity extends Entity
 {
@@ -11,10 +12,10 @@ class ClienteEntity extends Entity
         'nome' => null,
         'rg' => null,
         'cpf' => null,
-        'data_nascimento' => null,
+        'dataNascimento' => null,
     ];
     public $messages = [];
-    protected $datamap = [];
+    protected $datamap = ['dataNascimento' => 'data_nascimento'];
     protected $dates   = ['criado_em', 'atualizado_em', 'deleted_at'];
     protected $casts   = [];
 
@@ -26,6 +27,7 @@ class ClienteEntity extends Entity
         }
 
         $this->validarNome($data['nome']);
+        $this->validarRg($data['rg']);
     }
 
     private function validarNome(string $nome)
@@ -41,5 +43,32 @@ class ClienteEntity extends Entity
         }
 
         $this->attributes['nome'] = $nome;
+    }
+
+    private function validarRg(string $rg)
+    {
+        if(empty($rg)){
+            $this->messages['rg'] = 'O campo do rg não pode ser vazio';
+            return;
+        }
+
+        $this->attributes['rg'] = $rg;
+    }
+
+    private function validarDataNascimento(DateTime $dataNascimento)
+    {
+        if(empty($dataNascimento)){
+            $this->messages['dataNascimento'] = 'Precisa preencher a data de nascimento'; 
+            return;
+        }
+
+        $anoAtual = new DateTime();
+
+        if($anoAtual->diff($dataNascimento) < 18){
+            $this->messages['dataNascimento'] = 'Não permitimos clientes com menos de 18 anos';
+            return;
+        }
+
+        $this->attributes['dataNascimento'] = $dataNascimento;
     }
 }
