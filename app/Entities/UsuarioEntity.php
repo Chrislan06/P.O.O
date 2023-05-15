@@ -15,7 +15,7 @@ class UsuarioEntity extends Entity
         'senha' => null,
     ];
     public $messages = [];
-    protected $dates   = ['created_at', 'updated_at'];
+    protected $dates   = ['criado_em', 'atualizado_em'];
     protected $casts   = [];
 
     public function __construct($data = null)
@@ -29,11 +29,13 @@ class UsuarioEntity extends Entity
         if(isset($data['nome'])){
             $this->validarNome($data['nome']);
         }
-
-        if(count($this->messages) > 0){
-            throw new InvalidArgumentException();
-        }
     }
+
+    public function usuariValido()
+    {
+        return count($this->messages) == 0 ;
+    }
+
 
     private function validarEmail($email)
     {
