@@ -54,7 +54,7 @@ class Login extends BaseController
             session()->set('usuario', $usuarioBanco);
             return redirect()->to('/');
         } catch (\InvalidArgumentException) {
-            return redirect()->to('login')->withInput()->with('errors',$usuario->messages);
+            return redirect()->to('login')->withInput()->with('errors', $usuario->messages);
         }
     }
 
