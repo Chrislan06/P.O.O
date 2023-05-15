@@ -71,4 +71,39 @@ class ClienteEntity extends Entity
 
         $this->attributes['dataNascimento'] = $dataNascimento;
     }
+
+    private function validarCPF(string $cpf)
+    {
+        $cpfPuro = str_replace(['.','-'],['',''],$cpf);
+
+        if(mb_strlen($cpfPuro) < 11){
+            $this->messages['cpf'] =  'o cpf precisa ter no minimo 11 digitos';
+            return;
+        }
+
+        $this->attributes['cpf'] = $cpf; 
+    }
+
+    public function calcularIdade(): int
+    {
+        $dataAtual = new DateTime();
+        $idade = $dataAtual->diff($this->attributes['dataNascimento']);
+
+        return $idade;
+    }
+
+    public function getDataNascimento($formato = 'Y/m/d')
+    {
+        return $this->attributes['dataNascimento']->format($formato);   
+    }
+
+    public function getCPF()
+    {
+        if(str_contains($this->attributes['cpf'],'.') || str_contains($this->attributes['cpf'],'-')){
+            return $this->attributes['cpf'];
+        }
+
+        $cpfFormatado = substr($this->attributes['cpf'],0,3).'.'. substr($this->attributes['cpf'],3,6) . '.'. substr($this->attributes['cpf'],6,9) .'-' . substr($this->attributes['cpf'],9,11);
+        return $cpfFormatado;
+    }
 }
