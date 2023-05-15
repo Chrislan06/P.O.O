@@ -16,6 +16,6 @@ class Home extends BaseController
     
     public function index()
     {
-        return view('reserva/cancelar');
+        return view('reserva/reservar');
     }
 }
