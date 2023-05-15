@@ -18,7 +18,7 @@ class Home extends BaseController
     
     public function index()
     {
-        echo 'Home';
+        dd(session('usuario'));
         // $this->inserirUsuario();
         // return view('reserva/reservar');
     }

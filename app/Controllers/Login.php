@@ -44,13 +44,15 @@ class Login extends BaseController
                 throw new InvalidArgumentException();
             }
 
-            $usuarioBanco = $this->usuarioModel->where('email', $usuario->email)->select('id,nome,email')->first();
+            $usuarioBanco = $this->usuarioModel->where('email', $usuario->email)->select('id,nome,email,senha')->first();
             $verificarSenha = password_verify($usuario->senha, $usuarioBanco?->senha ?? '');
             if (!isset($usuarioBanco) || $verificarSenha === false) {
                 $usuario->messages[] = 'Email e/ou senha Incorreto(s)';
                 throw new InvalidArgumentException();
             }
+            unset($usuarioBanco->senha);
             session()->set('usuario', $usuarioBanco);
+            return redirect()->to('/');
         } catch (\InvalidArgumentException) {
             return redirect()->to('login')->withInput()->with('errors',$usuario->messages);
         }
