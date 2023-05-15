@@ -31,7 +31,7 @@ class UsuarioEntity extends Entity
         }
     }
 
-    public function usuariValido()
+    public function usuarioValido()
     {
         return count($this->messages) == 0 ;
     }

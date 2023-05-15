@@ -25,6 +25,7 @@
             <div class="input-wrapper">
               <label for="email">E-mail</label>
               <input
+                value="<?= old('email') ?>"
                 id="email"
                 type="email"
                 name="email"
@@ -77,6 +78,15 @@
               <a href="regist/imagesro/registro.html">Registrar-se</a>
             </div>
           </form>
+          <!-- Testando Mensagens de Erro -->
+          <?php if(session()->has('errors')) : ?>
+            <ul>
+              <?php foreach (session()->get('errors') as $erro): ?>
+              <li><?= $erro ?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+          <!--  -->
         </main>
       </div>
       <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />

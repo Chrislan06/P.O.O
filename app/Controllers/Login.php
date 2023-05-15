@@ -13,7 +13,7 @@ class Login extends BaseController
 
     public function __construct()
     {
-        $this->usuarioModel = new UsuarioModel();    
+        $this->usuarioModel = new UsuarioModel();
     }
     public function index()
     {
@@ -30,29 +30,29 @@ class Login extends BaseController
     */
     public function logar()
     {
+        // Verificar se foi mandando no metodo POST
         if (!$this->request->is('post')) {
             return redirect()->to('/');
         }
 
+
+        // validar os campos enviados
         try {
             $usuario = new UsuarioEntity($this->request->getPost());
 
-            if(!$usuario->usuariValido()){
+            if (!$usuario->usuarioValido()) {
                 throw new InvalidArgumentException();
             }
 
-            $usuarioBanco = $this->usuarioModel->where('email',$usuario->email)->select('nome,email')->first();
-            // dd($usuarioBanco);
+            $usuarioBanco = $this->usuarioModel->where('email', $usuario->email)->select('id,nome,email')->first();
             $verificarSenha = password_verify($usuario->senha, $usuarioBanco?->senha ?? '');
-            // dd($verificarSenha);
-
-            if(!isset($usuarioBanco) || $verificarSenha === false){
-                $usuario->messages[] = 'Email ou senha Incorreto(s)';
-                // dd('entrou');
+            if (!isset($usuarioBanco) || $verificarSenha === false) {
+                $usuario->messages[] = 'Email e/ou senha Incorreto(s)';
                 throw new InvalidArgumentException();
             }
-        } catch (\InvalidArgumentException $e) {
-            dd($usuario->messages);
+            session()->set('usuario', $usuarioBanco);
+        } catch (\InvalidArgumentException) {
+            return redirect()->to('login')->withInput()->with('errors',$usuario->messages);
         }
     }
 }
