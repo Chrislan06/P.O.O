@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
@@ -21,10 +21,11 @@
             <h1>Acesse a plataforma</h1>
             <p>Faça login ou registre-se para utilizar o site.</p>
           </div>
-          <form action="">
+          <form action="login/logar" method="post">
             <div class="input-wrapper">
               <label for="email">E-mail</label>
               <input
+                value="<?= old('email') ?>"
                 id="email"
                 type="email"
                 name="email"
@@ -46,6 +47,7 @@
               <input
                 type="password"
                 id="senha"
+                name="senha"
                 required
                 placeholder="Digite sua senha"
               />
@@ -76,6 +78,15 @@
               <a href="regist/imagesro/registro.html">Registrar-se</a>
             </div>
           </form>
+          <!-- Testando Mensagens de Erro -->
+          <?php if(session()->has('errors')) : ?>
+            <ul>
+              <?php foreach (session()->get('errors') as $erro): ?>
+              <li><?= $erro ?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+          <!--  -->
         </main>
       </div>
       <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
