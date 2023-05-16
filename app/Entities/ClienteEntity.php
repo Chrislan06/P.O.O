@@ -99,7 +99,7 @@ class ClienteEntity extends Entity
 
     public function getCPF()
     {
-        if(str_contains($this->attributes['cpf'],'.') || str_contains($this->attributes['cpf'],'-')){
+        if(str_contains($this->attributes['cpf'],'.') && str_contains($this->attributes['cpf'],'-')){
             return $this->attributes['cpf'];
         }
 

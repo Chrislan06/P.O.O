@@ -10,6 +10,7 @@ class Home extends BaseController
     public function index()
     {
        echo anchor('login/logout','logout');
+       echo anchor('');
     }
 
     private function inserirUsuario()
@@ -40,7 +41,6 @@ class Home extends BaseController
             echo 'email valido';
         }
         
-
     }
 }
 
