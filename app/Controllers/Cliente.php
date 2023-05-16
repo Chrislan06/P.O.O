@@ -8,6 +8,10 @@ class Cliente extends BaseController
 {
     public function index()
     {
+    }
+
+    public function cadastro()
+    {
         return view('reserva/reservar');
     }
 }

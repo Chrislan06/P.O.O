@@ -19,7 +19,7 @@
       <div>
         <main>
           <div class="headline">
-            <h1>Cadastre-se Agora</h1>
+            <h1>Cadastre um cliente AGORA!</h1>
             <p>Realize o cadastro para utilizar o SHO.</p>
           </div>
           <form action="/registro/registrado/registrado.html">

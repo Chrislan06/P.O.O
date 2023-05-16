@@ -19,11 +19,6 @@ class Admin extends BaseController
         return view('autenticacao/login_admin');
     }
 
-    public function Registrar()
-    {
-        echo 'Cadastrar Usuario';
-    }
-
     public function logar()
     {
         if (!$this->request->is('post')) {
@@ -59,5 +54,10 @@ class Admin extends BaseController
         unset($adminBanco->senha);
         session()->set('admin', $adminBanco);
         return redirect()->to('/');
+    }
+
+    public function cadastro()
+    {
+        return view('registro/registro');
     }
 }

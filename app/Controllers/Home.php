@@ -10,8 +10,7 @@ class Home extends BaseController
     // Redireciona para a Pagina principal
     public function index()
     {
-       echo anchor('login/logout','logout');
-       echo anchor('cliente/cadastrar','Cadastrar Cliente');
+        return view('teste');
     }
 
     private function inserirUsuario()
