@@ -44,7 +44,7 @@ class UsuarioEntity extends Entity
             return;
         }
 
-        if(!preg_match('/^([a-zA-Z]{3,})*(.)+@+([a-zA-z]{3,})+\.+com*(\.*[a-z]{1,3})$/',$email)){
+        if(!preg_match('/^([a-zA-Z]{3,})+.*@+([a-zA-z]{3,})(\.[a-z]{1,3})+$/',$email)){
             $this->messages[] = 'Email Inválido';  
             return;
         }
