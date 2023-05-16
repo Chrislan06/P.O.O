@@ -64,4 +64,9 @@ class Admin extends BaseController
     {
         return view('registro/registro');
     }
+
+    public function cadastrar()
+    {
+        
+    }
 }

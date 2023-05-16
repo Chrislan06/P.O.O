@@ -10,19 +10,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/registro.css" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/registro.css') ?>" />
   </head>
   <body>
     <div id="page" class="flex">
-      <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
+      <img src="<?= base_url('assets/images/loginImage.jpg') ?>" alt="Imagem colorida" />
       <div>
         <main>
           <div class="headline">
             <h1>Cadastre um cliente AGORA!</h1>
             <p>Realize o cadastro para utilizar o SHO.</p>
           </div>
-          <form action="/registro/registrado/registrado.html">
+          <form action="" method="post">
             <div class="input-wrapper">
               <label for="name">Nome</label>
               <input
@@ -69,14 +69,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="assets/images/eye-off.svg"
+                src="<?= base_url('assets/images/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="assets/images/eye.svg"
+                src="<?= base_url('assets/images/eye.svg') ?>"
                 alt=""
               />
             </div>
@@ -97,29 +97,24 @@
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo"
                 id="eyeTwo"
-                src="assets/images/eye-off.svg"
+                src="<?= base_url('assets/images/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo hide"
                 id="eyeTwo-hide"
-                src="assets/images/eye.svg"
+                src="<?= base_url('assets/images/eye.svg') ?>"
                 alt=""
               />
             </div>
 
             <button type="submit" id="cadastrobtn">Cadastrar</button>
-
-            <div class="login-account">
-              Já tem uma conta? Faça o
-              <a href="/login/index.html">Login</a>
-            </div>
           </form>
         </main>
       </div>
     </div>
 
-    <script src="assets/js /registro.js"></script>
+    <script src="<?= base_url('assets/js/registro.js') ?>"></script>
   </body>
 </html>
