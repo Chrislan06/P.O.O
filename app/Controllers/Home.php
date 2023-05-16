@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AdminModel;
 use App\Models\UsuarioModel;
 
 class Home extends BaseController
@@ -20,6 +21,20 @@ class Home extends BaseController
             'nome' => 'Chrislan',
             'email' => 'chrislan@gmail.com',
             'senha' => password_hash('12345678',PASSWORD_ARGON2ID)
+        ]);
+        
+        if($result){
+            echo 'Inserido';
+        }
+    }
+
+    private function inserirAdmin()
+    {
+        $adminModel = new AdminModel();
+        $result = $adminModel->insert([
+            'nome' => 'Chris Machado',
+            'email' => 'chrislan06@gmail.com',
+            'senha' => password_hash('87654321',PASSWORD_ARGON2ID)
         ]);
         
         if($result){
