@@ -21,7 +21,7 @@
             <h1>Área de admin</h1>
             <p>Faça o login</p>
           </div>
-          <form action="login/logar" method="post">
+          <form action="admin/logar" method="post">
             <div class="input-wrapper">
               <label for="email">E-mail</label>
               <input
@@ -81,7 +81,6 @@
       </div>
       <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
     </div>
-
     <script src="assets/js/login.js"></script>
   </body>
 </html>
