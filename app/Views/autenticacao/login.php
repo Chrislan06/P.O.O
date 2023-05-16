@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/login.css') ?>" />
   </head>
   <body>
     <div id="page" class="flex">
@@ -59,14 +59,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="assets/images/eye-off.svg"
+                src="<?= base_url('assets/images/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="assets/images/eye.svg"
+                src="<?= base_url('assets/images/eye.svg') ?>"
                 alt=""
               />
             </div>
@@ -89,9 +89,9 @@
           <!--  -->
         </main>
       </div>
-      <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
+      <img src="<?= base_url('assets/images/loginImage.jpg') ?>" alt="Imagem colorida" />
     </div>
 
-    <script src="assets/js/login.js"></script>
+    <script src="<?= base_url('assets/js/login.js') ?>"></script>
   </body>
 </html>
