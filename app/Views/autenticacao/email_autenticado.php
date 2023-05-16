@@ -18,7 +18,7 @@
       <form action="<?= base_url('login') ?>" method="post">
         <div class="headline">
           <h1>Email autenticado com sucesso</h1>
-          <p>A senha foi enviada para o email digitado.<br /></p>
+          <p>A senha foi enviada para o email digitado.<br/></p>
           <p>Confira a senha e tente o login novamente.</p>
         </div>
         <button>Página de Login</button>

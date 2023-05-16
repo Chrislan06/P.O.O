@@ -19,8 +19,8 @@
       <div>
         <main>
           <div class="headline">
-            <h1>Cadastre um cliente AGORA!</h1>
-            <p>Realize o cadastro para utilizar o SHO.</p>
+            <h1>Cadastre um usuário AGORA!</h1>
+            <p>Coloque as informações do usuario a baixo</p>
           </div>
           <form action="cadastrar" method="post">
             <div class="input-wrapper">
@@ -113,6 +113,7 @@
             </div>
 
             <button type="submit" id="cadastrobtn">Cadastrar</button>
+            <?= anchor('') ?>
           </form>
           <!-- Apresentando mensagens de erro -->
           <?php if(session()->has('errors')): ?>
