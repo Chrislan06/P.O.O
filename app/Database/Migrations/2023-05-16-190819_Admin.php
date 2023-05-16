@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\Database\RawSql;
 
-class Usuario extends Migration
+class Admin extends Migration
 {
     public function up()
     {
@@ -34,15 +34,15 @@ class Usuario extends Migration
             'atualizado_em' => [
                 'type' => 'TIMESTAMP',
                 'default' => new RawSql('CURRENT_TIMESTAMP')
-            ], 
+            ],            
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('usuario_migration');
+        $this->forge->createTable('admin_migration');
     }
 
     public function down()
     {
-        $this->forge->dropTable('usuario_migration');
+        $this->forge->dropTable('admin_migration');
     }
 }
