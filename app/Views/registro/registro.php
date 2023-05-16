@@ -22,13 +22,14 @@
             <h1>Cadastre um cliente AGORA!</h1>
             <p>Realize o cadastro para utilizar o SHO.</p>
           </div>
-          <form action="" method="post">
+          <form action="cadastrar" method="post">
             <div class="input-wrapper">
               <label for="name">Nome</label>
               <input
                 id="name"
                 type="name"
-                name="name"
+                name="nome"
+                value="<?= old('nome') ?>"
                 required
                 placeholder="Digite seu nome"
               />
@@ -43,6 +44,7 @@
                 id="email"
                 type="email"
                 name="email"
+                value="<?= old('email') ?>"
                 required
                 pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$"
                 placeholder="Digite seu e-mail"
@@ -58,6 +60,7 @@
               <input
                 type="password"
                 id="senha"
+                name="senha"
                 required
                 placeholder="Digite sua senha"
               />
@@ -111,6 +114,14 @@
 
             <button type="submit" id="cadastrobtn">Cadastrar</button>
           </form>
+          <?php if(session()->has('errors')): ?>
+            <ul>
+              <?php foreach(session()->getFlashdata('errors') as $error): ?>
+                <li><?= $error ?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+          <p><?= session()->getFlashdata('success') ?? '' ?></p>
         </main>
       </div>
     </div>

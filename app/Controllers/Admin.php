@@ -3,20 +3,26 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Entities\UsuarioEntity;
 use App\Models\AdminModel;
+use App\Models\UsuarioModel;
+use CodeIgniter\Filters\InvalidChars;
+use InvalidArgumentException;
 
 class Admin extends BaseController
 {
     private $adminModel;
+    private $usuarioModel;
 
     public function __construct()
     {
         $this->adminModel = new AdminModel();
+        $this->usuarioModel = new UsuarioModel();
     }
 
     public function index()
     {
-        if (!session()->has('admin') && !session()->has('usuario')){
+        if (!session()->has('admin') && !session()->has('usuario')) {
             return view('autenticacao/login_admin');
         }
 
@@ -67,6 +73,37 @@ class Admin extends BaseController
 
     public function cadastrar()
     {
-        
+        if (!$this->request->is('post')) {
+            return redirect()->to('/');
+        }
+
+        $params = $this->request->getPost();
+
+
+        try {
+            $usuario = new UsuarioEntity($params);
+            if (!$usuario->usuarioValido()) {
+                throw new InvalidArgumentException();
+            }
+            $data = [
+                'nome' => $usuario->nome,
+                'email' => $usuario->email,
+                'senha' => $usuario->hashSenha(),
+            ];
+
+            // dd($this->usuarioModel->errors() !== null);
+            $resultado = $this->usuarioModel->insert($data);
+
+            if (!$resultado) {
+                foreach ($this->usuarioModel->errors() as $error){
+                    $usuario->messages[] = $error;
+                }
+                throw new InvalidArgumentException();
+            }
+
+            return redirect()->to('admin/cadastro')->with('success', 'Usuario Inserido com sucesso');
+        } catch (\InvalidArgumentException) {
+            return redirect()->to('admin/cadastro')->with('errors', $usuario->messages)->withInput();
+        }
     }
 }
