@@ -18,8 +18,8 @@
       <div>
         <main>
           <div class="headline">
-            <h1>Acesse a plataforma</h1>
-            <p>Faça login</p>
+            <h1>Área de admin</h1>
+            <p>Faça o login</p>
           </div>
           <form action="login/logar" method="post">
             <div class="input-wrapper">
@@ -37,12 +37,7 @@
             </div>
 
             <div class="input-wrapper">
-              <div class="label-wrapper">
-                <label for="senha"> Senha </label>
-                <a href="esquec/imagesisenha/esqueci.html"
-                  >Esqueceu a senha?</a
-                >
-              </div>
+
 
               <input
                 type="password"

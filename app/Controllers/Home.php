@@ -11,7 +11,7 @@ class Home extends BaseController
     public function index()
     {
        echo anchor('login/logout','logout');
-       echo anchor('');
+       echo anchor('cliente/cadastrar','Cadastrar Cliente');
     }
 
     private function inserirUsuario()

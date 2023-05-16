@@ -60,7 +60,7 @@ class Login extends BaseController
 
     public function logout()
     {
-        session()->remove('usuario');
+        session()->destroy();
 
         return redirect()->to('/');
     }
