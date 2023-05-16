@@ -34,6 +34,10 @@ $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
     $routes->get('/', 'Home::index');
     $routes->get('index', 'Home::index');
 });
+$routes->group('cliente',['filter' => 'autenticacao'], function($routes){
+    $routes->get('/','Cliente::index');
+    $routes->get('index','Cliente::index');
+});
 $routes->group('admin',['filter' => 'autenticacaoadmin'], function($routes){
     $routes->get('cadastro','Admin::cadastro');
 });

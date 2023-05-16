@@ -16,7 +16,7 @@ class Admin extends BaseController
 
     public function index()
     {
-        if (!session()->has('admin') || !session()->has('usuario')){
+        if (!session()->has('admin') && !session()->has('usuario')){
             return view('autenticacao/login_admin');
         }
 
