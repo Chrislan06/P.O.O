@@ -114,6 +114,7 @@
 
             <button type="submit" id="cadastrobtn">Cadastrar</button>
           </form>
+          <!-- Apresentando mensagens de erro -->
           <?php if(session()->has('errors')): ?>
             <ul>
               <?php foreach(session()->getFlashdata('errors') as $error): ?>
@@ -121,7 +122,10 @@
               <?php endforeach; ?>
             </ul>
           <?php endif; ?>
+          
+          <!-- Apresentando mensagem de sucesso ao inserir  -->
           <p><?= session()->getFlashdata('success') ?? '' ?></p>
+          <!--  -->
         </main>
       </div>
     </div>
