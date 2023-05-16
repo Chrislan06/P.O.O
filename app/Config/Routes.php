@@ -34,6 +34,9 @@ $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
     $routes->get('/', 'Home::index');
     $routes->get('index', 'Home::index');
 });
+$routes->group('admin',['filter' => 'autenticacaoadmin'], function($routes){
+
+});
 
 /*
  * --------------------------------------------------------------------

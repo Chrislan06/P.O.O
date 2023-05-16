@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class Autenticacao implements FilterInterface
+class AutenticacaoAdmin implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -25,8 +25,8 @@ class Autenticacao implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->has('usuario') || !session()->has('admin')) {
-            return redirect()->to('/login');
+        if (!session()->has('admin')) {
+            return redirect()->to('/');
         }
     }
 
