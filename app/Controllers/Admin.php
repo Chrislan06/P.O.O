@@ -16,7 +16,11 @@ class Admin extends BaseController
 
     public function index()
     {
-        return view('autenticacao/login_admin');
+        if (!session()->has('admin') || !session()->has('usuario')){
+            return view('autenticacao/login_admin');
+        }
+
+        return redirect()->to('/');
     }
 
     public function logar()

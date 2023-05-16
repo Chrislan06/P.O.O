@@ -17,7 +17,7 @@ class Login extends BaseController
     }
     public function index()
     {
-        if (!session()->has('usuario') && session()->has('admin')) {
+        if (!session()->has('usuario') && !session()->has('admin')) {
             return view('autenticacao/login');
         }
 
