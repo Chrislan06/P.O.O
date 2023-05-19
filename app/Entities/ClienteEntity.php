@@ -110,7 +110,7 @@ class ClienteEntity extends Entity
             return $this->attributes['cpf'];
         }
 
-        $cpfFormatado = substr($this->attributes['cpf'],0,3).'.'. substr($this->attributes['cpf'],3,6) . '.'. substr($this->attributes['cpf'],6,9) .'-' . substr($this->attributes['cpf'],9,11);
+        $cpfFormatado = substr($this->attributes['cpf'],0,3).'.'. substr($this->attributes['cpf'],3,3) . '.'. substr($this->attributes['cpf'],6,3) .'-' . substr($this->attributes['cpf'],9,2);
         return $cpfFormatado;
     }
 }

@@ -15,8 +15,43 @@
  */
 
 
-function cpfValido(string $cpf)
-{
-    
-    return true;
-}
+ function cpfValido(string $cpf)
+ {
+     $cpf = str_replace(['.', '-'], ['', ''], $cpf);
+     $somador = 0;
+     $multiplicador = 10;
+     for ($i = 0; $i < 9; $i++) {
+         $somador += (($multiplicador - $i) * $cpf[$i]);
+     }
+     $resto = $somador % 11;
+
+     if (($verificador1 = 11 - $resto) > 11) {
+         $verificador1 = 0;
+     }
+     // die(var_dump($verificador1));
+
+     if ($verificador1 != $cpf[9]) {
+         return false;
+     }
+
+     $somador = 0;
+     $multiplicador = 11;
+     for ($i = 0; $i < 9; $i++) {
+         $somador += (($multiplicador - $i) * $cpf[$i]);
+     }
+
+
+     $somador += $verificador1 * 2;
+     $resto = $somador % 11;
+
+     if (($verificador2 = 11 - $resto) > 11) {
+         $verificador2 = 0;
+     }
+     // die(var_dump($verificador2));
+     var_dump(substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . "-$verificador1$verificador2");
+     echo PHP_EOL;
+     if ($verificador2 != $cpf[10]) {
+         return false;
+     }
+     return true;
+ }
