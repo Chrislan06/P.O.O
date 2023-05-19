@@ -11,7 +11,7 @@
 <body>
     <?= anchor('login/logout', 'logout') ?>
     <br>
-    <?= anchor('cliente/cadastro', 'Cadastro de Cliente') ?>
+    <?= anchor('cliente/', 'Cadastro de Cliente') ?>
     <br>
     <?php if (session()->has('admin')) : ?>
         <?= anchor('admin/cadastro', 'Cadastrar Usuário') ?>

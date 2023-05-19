@@ -10,12 +10,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Reserva</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/estiloReservar.css') ?>" />
   </head>
   <body>
     <div class="page">
-      <form action="">
+      <form action="cliente/cadastrar" method="post">
         <div class="headline">
           <h1>Realizar Reserva</h1>
         </div>
@@ -50,6 +50,6 @@
       </form>
     </div>
 
-    <script src="assets/js/reserva.js"></script>
+    <script src="<?=base_url('assets/js/reserva.js') ?>"></script>
   </body>
 </html>

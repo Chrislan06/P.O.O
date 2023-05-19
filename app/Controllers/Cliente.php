@@ -13,5 +13,6 @@ class Cliente extends BaseController
 
     public function cadastrar()
     {
+        var_dump('TODO: Cadastrar');
     }
 }

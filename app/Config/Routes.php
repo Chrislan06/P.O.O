@@ -51,6 +51,7 @@ $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
 $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->get('/','Cliente::index');
     $routes->get('index','Cliente::index');
+    $routes->post('cadastrar','Cliente::cadastrar');
 });
 
 // Proibir Acesso as funções de admin se não tiver permissões de Admin
