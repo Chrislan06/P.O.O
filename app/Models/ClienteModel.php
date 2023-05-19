@@ -10,7 +10,7 @@ class ClienteModel extends Model
     protected $table            = 'clientes';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = App\Entities\Cliente::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['nome','rg','cpf','data_nascimento'];

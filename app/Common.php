@@ -13,3 +13,10 @@
  *
  * @see: https://codeigniter.com/user_guide/extending/common.html
  */
+
+
+function cpfValido(string $cpf)
+{
+    
+    return true;
+}

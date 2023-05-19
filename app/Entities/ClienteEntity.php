@@ -27,6 +27,7 @@ class ClienteEntity extends Entity
         }
 
         $this->validarNome($data['nome']);
+        $this->validarDataNascimento($data['dataNascimento']);
         $this->validarRg($data['rg']);
     }
 
@@ -62,9 +63,15 @@ class ClienteEntity extends Entity
             return;
         }
 
-        $anoAtual = new DateTime();
+        $dataAtual = new DateTime();
 
-        if($anoAtual->diff($dataNascimento) < 18){
+        if ($dataNascimento > $dataAtual){
+            $this->messages['dataNascimento'] = 'A data não pode estar no futuro';
+            return;
+        }
+
+
+        if($dataAtual->diff($dataNascimento) < 18){
             $this->messages['dataNascimento'] = 'Não permitimos clientes com menos de 18 anos';
             return;
         }
