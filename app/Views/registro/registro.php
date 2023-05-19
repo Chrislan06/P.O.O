@@ -113,7 +113,9 @@
             </div>
 
             <button type="submit" id="cadastrobtn">Cadastrar</button>
-            <?= anchor('') ?>
+            <!-- Redirecionando para A main -->
+            <?= anchor('/','Voltar') ?>
+            <!--  -->
           </form>
           <!-- Apresentando mensagens de erro -->
           <?php if(session()->has('errors')): ?>

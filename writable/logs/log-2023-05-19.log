@@ -25,3 +25,51 @@ INFO - 2023-05-19 17:57:16 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-05-19 18:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-05-19 18:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-05-19 18:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 18:07:35 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:39 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:44 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:45 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 18:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

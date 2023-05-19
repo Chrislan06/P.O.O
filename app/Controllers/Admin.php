@@ -93,7 +93,7 @@ class Admin extends BaseController
 
             // dd($this->usuarioModel->errors() !== null);
             $resultado = $this->usuarioModel->insert($data);
-
+            
             if (!$resultado) {
                 foreach ($this->usuarioModel->errors() as $error){
                     $usuario->messages[] = $error;
