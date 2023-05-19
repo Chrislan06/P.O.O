@@ -71,8 +71,7 @@ class ClienteEntity extends Entity
             return;
         }
 
-
-        if ($dataAtual->diff($dataNascimento) < 18) {
+        if ($dataAtual->diff($dataNascimento)->y < 18) {
             $this->messages['dataNascimento'] = 'Não permitimos clientes com menos de 18 anos';
             return;
         }
@@ -105,7 +104,7 @@ class ClienteEntity extends Entity
         return $idade;
     }
 
-    public function getDataNascimento($formato = 'Y/m/d')
+    public function getDataNascimento($formato = 'Y-m-d H:i:s')
     {
         return $this->attributes['dataNascimento']->format($formato);
     }

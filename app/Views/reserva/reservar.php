@@ -42,7 +42,7 @@
 
         <div class="input-wrapper">
           <label for="data">Data de Nascimento</label>
-          <input type="date" name="data" id="data" required />
+          <input type="date" name="dataNascimento" id="data" required />
           <div class="error" id="empty-date">Esse campo é obrigatório</div>
         </div>
 
