@@ -47,9 +47,7 @@
      if (($verificador2 = 11 - $resto) > 11) {
          $verificador2 = 0;
      }
-     // die(var_dump($verificador2));
-     var_dump(substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . "-$verificador1$verificador2");
-     echo PHP_EOL;
+
      if ($verificador2 != $cpf[10]) {
          return false;
      }
