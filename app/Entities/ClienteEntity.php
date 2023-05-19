@@ -7,7 +7,7 @@ use DateTime;
 
 class ClienteEntity extends Entity
 {
-    protected $attributes =[
+    protected $attributes = [
         'id' => null,
         'nome' => null,
         'rg' => null,
@@ -21,7 +21,7 @@ class ClienteEntity extends Entity
 
     public function __construct(array $data = null)
     {
-        if(is_null($data)){
+        if (is_null($data)) {
             parent::__construct($data);
             return;
         }
@@ -29,16 +29,17 @@ class ClienteEntity extends Entity
         $this->validarNome($data['nome']);
         $this->validarDataNascimento($data['dataNascimento']);
         $this->validarRg($data['rg']);
+        $this->validarCPF($data['cpf']);
     }
 
     private function validarNome(string $nome)
     {
-        if(empty($nome)){
-            $this->messages['nome'] = 'Nome não pode ser vazio'; 
+        if (empty($nome)) {
+            $this->messages['nome'] = 'Nome não pode ser vazio';
             return;
         }
 
-        if(mb_strlen($nome) < 3){
+        if (mb_strlen($nome) < 3) {
             $this->messages['nome'] = 'minimo de caracteres para o nome é 3';
             return;
         }
@@ -48,7 +49,7 @@ class ClienteEntity extends Entity
 
     private function validarRg(string $rg)
     {
-        if(empty($rg)){
+        if (empty($rg)) {
             $this->messages['rg'] = 'O campo do rg não pode ser vazio';
             return;
         }
@@ -58,20 +59,20 @@ class ClienteEntity extends Entity
 
     private function validarDataNascimento(DateTime $dataNascimento)
     {
-        if(empty($dataNascimento)){
-            $this->messages['dataNascimento'] = 'Precisa preencher a data de nascimento'; 
+        if (empty($dataNascimento)) {
+            $this->messages['dataNascimento'] = 'Precisa preencher a data de nascimento';
             return;
         }
 
         $dataAtual = new DateTime();
 
-        if ($dataNascimento > $dataAtual){
+        if ($dataNascimento > $dataAtual) {
             $this->messages['dataNascimento'] = 'A data não pode estar no futuro';
             return;
         }
 
 
-        if($dataAtual->diff($dataNascimento) < 18){
+        if ($dataAtual->diff($dataNascimento) < 18) {
             $this->messages['dataNascimento'] = 'Não permitimos clientes com menos de 18 anos';
             return;
         }
@@ -81,14 +82,19 @@ class ClienteEntity extends Entity
 
     private function validarCPF(string $cpf)
     {
-        $cpfPuro = str_replace(['.','-'],['',''],$cpf);
+        $cpfPuro = str_replace(['.', '-'], ['', ''], $cpf);
 
-        if(mb_strlen($cpfPuro) < 11){
-            $this->messages['cpf'] =  'o cpf precisa ter no minimo 11 digitos';
+        if (mb_strlen($cpfPuro) < 11) {
+            $this->messages['cpf'] =  'o CPF precisa ter no minimo 11 digitos';
             return;
         }
 
-        $this->attributes['cpf'] = $cpf; 
+        if (!cpfValido($cpf)) {
+            $this->messages['cpf'] = 'CPF inválido';
+            return;
+        }
+
+        $this->attributes['cpf'] = $cpf;
     }
 
     public function calcularIdade(): int
@@ -101,16 +107,16 @@ class ClienteEntity extends Entity
 
     public function getDataNascimento($formato = 'Y/m/d')
     {
-        return $this->attributes['dataNascimento']->format($formato);   
+        return $this->attributes['dataNascimento']->format($formato);
     }
 
     public function getCPF()
     {
-        if(str_contains($this->attributes['cpf'],'.') && str_contains($this->attributes['cpf'],'-')){
+        if (str_contains($this->attributes['cpf'], '.') && str_contains($this->attributes['cpf'], '-')) {
             return $this->attributes['cpf'];
         }
 
-        $cpfFormatado = substr($this->attributes['cpf'],0,3).'.'. substr($this->attributes['cpf'],3,3) . '.'. substr($this->attributes['cpf'],6,3) .'-' . substr($this->attributes['cpf'],9,2);
+        $cpfFormatado = substr($this->attributes['cpf'], 0, 3) . '.' . substr($this->attributes['cpf'], 3, 3) . '.' . substr($this->attributes['cpf'], 6, 3) . '-' . substr($this->attributes['cpf'], 9, 2);
         return $cpfFormatado;
     }
 }
