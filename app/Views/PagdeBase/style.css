@@ -1,5 +1,5 @@
 :root,
-[data-bs-theme='light'] {
+[data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -65,11 +65,11 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto,
-    'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+    "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.15),
@@ -81,7 +81,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-color-rgb: 33, 37, 41;
-  --bs-body-bg: #e9e8e8;
+  --bs-body-bg: #d3d2d2;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -123,7 +123,6 @@
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 }
-
 body {
   background-color: var(--bs-body-bg);
 }
@@ -132,69 +131,7 @@ nav {
   background-color: var(--bs-code-color);
 }
 
-img {
-  height: 60vh;
-  object-fit: cover;
+section div.botaoReserva {
+  text-align: center;
 }
 
-.content {
-  margin-top: 2rem;
-  margin-right: 2rem;
-  width: 40%;
-  margin-left: 60%;
-}
-
-.buttons {
-  display: grid;
-  justify-content: center;
-}
-
-.button {
-  all: unset;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-
-  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
-  border-radius: 10px;
-
-  width: 100%;
-
-  font-weight: bold;
-  line-height: 2.4rem;
-
-  color: white;
-  margin-block: 10px;
-  margin-top: 20px;
-}
-
-.button:focus {
-  outline: 2px solid black;
-  border-radius: 0.4rem;
-}
-
-.button:hover {
-  background: linear-gradient(
-    103.66deg,
-    rgba(156, 32, 158, 0.83) 0.02%,
-    rgba(205, 26, 59, 0.83) 100%
-  );
-  cursor: pointer;
-}
-
-.icon {
-  width: 50px;
-  height: auto;
-}
-
-footer {
-  position: absolute;
-  padding: 40px 0;
-  width: 100%;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-  background-color: #0f5132;
-}
