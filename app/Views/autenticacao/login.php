@@ -73,10 +73,6 @@
 
             <button type="submit" id="Entrarbtn">Entrar</button>
 
-            <div class="create-account">
-              Realize o registro caso ainda não esteja logado no sistema
-              <a href="regist/imagesro/registro.html">Registrar-se</a>
-            </div>
           </form>
           <!-- Testando Mensagens de Erro -->
           <?php if(session()->has('errors')) : ?>
