@@ -1,0 +1,168 @@
+INFO - 2023-05-19 17:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:50:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:51:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 17:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 18:07:35 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:39 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:44 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 18:07:45 --> Too few arguments to function CodeIgniter\Router\RouteCollection::post(), 1 passed in C:\laragon\www\Projeto-P.O.O\app\Config\Routes.php on line 54 and at least 2 expected
+in SYSTEMPATH\Router\RouteCollection.php on line 927.
+ 1 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->post('')
+ 2 SYSTEMPATH\Router\RouteCollection.php(676): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(55): CodeIgniter\Router\RouteCollection->group('cliente', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(267): require('C:\\laragon\\www\\Projeto-P.O.O\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(802): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 18:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:08:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:30:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:32:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 18:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 19:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:38:45 --> App\Entities\ClienteEntity::validarDataNascimento(): Argument #1 ($dataNascimento) must be of type DateTime, string given, called in C:\laragon\www\Projeto-P.O.O\app\Entities\ClienteEntity.php on line 30
+in APPPATH\Entities\ClienteEntity.php on line 60.
+ 1 APPPATH\Entities\ClienteEntity.php(30): App\Entities\ClienteEntity->validarDataNascimento('2004-08-06')
+ 2 APPPATH\Controllers\Cliente.php(30): App\Entities\ClienteEntity->__construct([...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-05-19 20:52:45 --> [DEPRECATED] str_contains(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH\Entities\ClienteEntity.php on line 115.
+ 1 APPPATH\Entities\ClienteEntity.php(115): str_contains(null, '.')
+ 2 APPPATH\Controllers\Cliente.php(46): App\Entities\ClienteEntity->getCPF()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-05-19 20:52:45 --> [DEPRECATED] substr(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Entities\ClienteEntity.php on line 119.
+ 1 APPPATH\Entities\ClienteEntity.php(119): substr(null, 0, 3)
+ 2 APPPATH\Controllers\Cliente.php(46): App\Entities\ClienteEntity->getCPF()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-05-19 20:52:45 --> [DEPRECATED] substr(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Entities\ClienteEntity.php on line 119.
+ 1 APPPATH\Entities\ClienteEntity.php(119): substr(null, 3, 3)
+ 2 APPPATH\Controllers\Cliente.php(46): App\Entities\ClienteEntity->getCPF()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-05-19 20:52:45 --> [DEPRECATED] substr(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Entities\ClienteEntity.php on line 119.
+ 1 APPPATH\Entities\ClienteEntity.php(119): substr(null, 6, 3)
+ 2 APPPATH\Controllers\Cliente.php(46): App\Entities\ClienteEntity->getCPF()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-05-19 20:52:45 --> [DEPRECATED] substr(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Entities\ClienteEntity.php on line 119.
+ 1 APPPATH\Entities\ClienteEntity.php(119): substr(null, 9, 2)
+ 2 APPPATH\Controllers\Cliente.php(46): App\Entities\ClienteEntity->getCPF()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-05-19 20:52:45 --> Call to a member function format() on null
+in APPPATH\Entities\ClienteEntity.php on line 110.
+ 1 APPPATH\Controllers\Cliente.php(47): App\Entities\ClienteEntity->getDataNascimento()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-05-19 20:53:49 --> Object of class DateInterval could not be converted to int
+in APPPATH\Entities\ClienteEntity.php on line 75.
+ 1 APPPATH\Entities\ClienteEntity.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Object of class DateInterval could not be converted to int', 'C:\\laragon\\www\\Projeto-P.O.O\\app\\Entities\\ClienteEntity.php', 75)
+ 2 APPPATH\Entities\ClienteEntity.php(30): App\Entities\ClienteEntity->validarDataNascimento(Object(DateTime))
+ 3 APPPATH\Controllers\Cliente.php(37): App\Entities\ClienteEntity->__construct([...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Cliente->cadastrar()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-05-19 20:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 20:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 21:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 21:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 21:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-19 21:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
