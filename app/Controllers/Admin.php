@@ -34,7 +34,7 @@ class Admin extends BaseController
         if (!$this->request->is('post')) {
             redirect()->to('/admin');
         }
-
+        
         $contaValida = $this->validate([
             'email' => 'required|valid_email',
             'senha' => 'required|min_length[8]',
@@ -48,6 +48,7 @@ class Admin extends BaseController
                 'min_length' => 'O minimo de caracteres para a senha  é 8',
             ],
         ]);
+        // dd($this->request->getPost()); 
 
         if (!$contaValida) {
             return redirect()->to('/admin')->with('errors', $this->validator->getErrors())->withInput();

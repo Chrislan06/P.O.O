@@ -15,7 +15,7 @@ class Admin extends Seeder
         $data =[
             'nome' => 'Admin',
             'email' => 'admin@admin.com',
-            'senha' => password_hash('admin',PASSWORD_ARGON2ID),
+            'senha' => password_hash('admin.admin',PASSWORD_ARGON2ID),
             'criado_em' => $dataAtual->format('Y-m-d H:i:s'),
             'atualizado_em' => $dataAtual->format('Y-m-d H:i:s'),
         ];
