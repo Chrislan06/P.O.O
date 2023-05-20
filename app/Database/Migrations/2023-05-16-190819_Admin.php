@@ -38,11 +38,11 @@ class Admin extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('admin_migration');
+        $this->forge->createTable('admins');
     }
 
     public function down()
     {
-        $this->forge->dropTable('admin_migration');
+        $this->forge->dropTable('admins');
     }
 }

@@ -38,7 +38,7 @@ class Usuario extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('usuario_migration');
+        $this->forge->createTable('usuario');
     }
 
     public function down()
