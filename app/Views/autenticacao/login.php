@@ -59,14 +59,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="<?= base_url('assets/images/eye-off.svg') ?>"
+                src="<?= base_url('assets/images/eyes/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="<?= base_url('assets/images/eye.svg') ?>"
+                src="<?= base_url('assets/images/eyes/eye.svg') ?>"
                 alt=""
               />
             </div>
