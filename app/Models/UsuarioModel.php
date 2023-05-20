@@ -25,7 +25,6 @@ class UsuarioModel extends Model
     // Validation
     protected $validationRules      = [
         'email' => 'valid_email|is_unique[usuarios.email]',
-        'email' => 'is_unique[admins.email]',
     ];
     protected $validationMessages   = [
         'email' => [
