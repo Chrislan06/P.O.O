@@ -150,7 +150,7 @@ img {
 .right-content {
   margin-top: 2rem;
   width: 30%;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-right: 2rem;
 }
 
@@ -162,19 +162,69 @@ img {
   width: 40%;
 }
 
-.infos {
-  display: inline-block;
-  width: 30%;
-  margin-block: 1%;
+.calendar {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.info {
-  border: 1px solid wheat;
-  padding: 1px 70px;
+.calendar iframe {
+  width: 500px;
+  height: 300px;
+}
+
+.calendar a {
+  all: unset;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 150px;
+  padding: 1rem 1rem;
+
+  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
+  border-radius: 0.4rem;
+
+  font-weight: bold;
+  line-height: 2.4rem;
+
+  color: white;
+  margin-top: 1rem;
+}
+
+.calendar a:focus {
+  outline: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+.calendar a:hover {
+  background: linear-gradient(
+    103.66deg,
+    rgba(156, 32, 158, 0.83) 0.02%,
+    rgba(205, 26, 59, 0.83) 100%
+  );
+  cursor: pointer;
+}
+
+.infos {
+  width: 100%;
+  /*por em px todo rem necessário*/
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infos p {
+  border: 1px solid grey;
+  padding: 1.6rem 2.4rem;
   border-radius: 7px;
   display: flex;
-  width: 100px;
-  justify-content: center;
+  align-items: center;
+  height: 10px;
+  width: 150px;
+  margin-right: 10px;
 }
 
 .buttons {
