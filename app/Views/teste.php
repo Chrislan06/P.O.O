@@ -1,4 +1,5 @@
-<body>
+<?= $this->extend('layout/master_1') ?>
+<?= $this->section('content') ?>
     <?= anchor('login/logout', 'logout') ?>
     <br>
     <?= anchor('cliente/', 'Cadastro de Cliente') ?>
@@ -9,3 +10,4 @@
     <?php endif; ?>
     <?= anchor('/quarto','Quartos') ?>
     <br>
+<?= $this->endSection() ?>
