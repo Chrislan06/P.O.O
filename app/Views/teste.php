@@ -17,6 +17,8 @@
         <?= anchor('admin/cadastro', 'Cadastrar Usuário') ?>
         <br>
     <?php endif; ?>
+    <?= anchor('/quarto','Quartos') ?>
+    <br>
 </body>
 
 </html>

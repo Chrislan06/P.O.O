@@ -61,6 +61,10 @@ $routes->group('admin',['filter' => 'autenticacaoadmin'], function($routes){
     $routes->post('cadastrar','Admin::cadastrar');
 });
 
+$routes->group('quarto', ['filter' => 'autenticacao'], function($routes){
+    $routes->get('/','Quarto::index');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
