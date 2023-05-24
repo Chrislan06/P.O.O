@@ -10,10 +10,12 @@
 
   <body>
     <header>
-      <img src="<?= base_url('assets/hotel-solid (1).svg') ?>" alt="Logo" />
+      <a href="<?= base_url('/') ?>">
+        <img src="<?= base_url('assets/hotel-solid (1).svg') ?>" alt="Logo" />
+      </a>
       <nav>
         <ul>
-          <li>Perfil(nome)</li>
+          <li><?= session()->get('usuario')->nome ?></li>
           <li>check-in</li>
           <li>check-out</li>
           <li>Logout</li>
