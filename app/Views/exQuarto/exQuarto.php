@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="exQuarto.css"/>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="<?= base_url('assets/css/exQuarto.css') ?>"/>
     <title>POO Hotel</title>
   </head>
   <body>
@@ -64,13 +63,13 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/public/assets/quartos/solteiro/LHeart/solteiroLH1.jpg" class="d-block w-100" alt="Hotel 1">
+              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH1.jpg') ?>" class="d-block w-100" alt="Hotel 1">
             </div>
             <div class="carousel-item">
-              <img src="/public/assets/quartos/solteiro/LHeart/solteiroLH2.jpg" class="d-block w-100" alt="Hotel 2">
+              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH2.jpg') ?>" class="d-block w-100" alt="Hotel 2">
             </div>
             <div class="carousel-item">
-              <img src="/public/assets/quartos/solteiro/LHeart/solteiroLH3.jpg" class="d-block w-100" alt="Hotel 3">
+              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH3.jpg') ?>" class="d-block w-100" alt="Hotel 3">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

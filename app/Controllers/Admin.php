@@ -69,7 +69,7 @@ class Admin extends BaseController
 
     public function cadastro()
     {
-        return view('registro/registro');
+        return view('registro/cadastrar_usuario');
     }
 
     public function cadastrar()
