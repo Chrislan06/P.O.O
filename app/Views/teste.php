@@ -10,4 +10,6 @@
     <?php endif; ?>
     <?= anchor('/quarto','Quartos') ?>
     <br>
+    <?= anchor('/login/informacoes','Informações de Login') ?>
+    <br>
 <?= $this->endSection() ?>

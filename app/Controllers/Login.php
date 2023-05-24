@@ -46,6 +46,7 @@ class Login extends BaseController
 
             $usuarioBanco = $this->usuarioModel->where('email', $usuario->email)->select('id,nome,email,senha')->first();
             $verificarSenha = password_verify($usuario->senha, $usuarioBanco?->senha ?? '');
+            // Verificar senha e existencia do usuario no banco
             if (!isset($usuarioBanco) || $verificarSenha === false) {
                 $usuario->messages[] = 'Email e/ou senha Incorreto(s)';
                 throw new InvalidArgumentException();
@@ -62,6 +63,15 @@ class Login extends BaseController
     public function logout()
     {
         session()->destroy();
+
+        return redirect()->to('/');
+    }
+
+    public function informacoes()
+    {
+        if(session()->has('usuario')){
+            return view('informacoesUsuario/informacoesUsuario');
+        }
 
         return redirect()->to('/');
     }
