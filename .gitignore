@@ -1,3 +1,4 @@
 .env
 /writable/session/
 /writable/debugbar/
+/writable/logs/
