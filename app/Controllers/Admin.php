@@ -63,7 +63,8 @@ class Admin extends BaseController
         }
 
         unset($adminBanco->senha);
-        session()->set('admin', $adminBanco);
+        session()->set('usuario',$adminBanco);
+        session()->set('admin', 'sim');
         return redirect()->to('/');
     }
 
