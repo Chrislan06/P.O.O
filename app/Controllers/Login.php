@@ -69,7 +69,7 @@ class Login extends BaseController
 
     public function informacoes()
     {
-        if(session()->has('usuario')){
+        if(!session()->has('usuario')){
             return view('informacoesUsuario/informacoesUsuario');
         }
 

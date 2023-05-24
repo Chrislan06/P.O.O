@@ -41,6 +41,7 @@ $routes->post('admin/logar','Admin::logar');
 $routes->get('/login','Login::index');
 $routes->post('/login/logar', 'Login::logar');
 $routes->get('login/logout','Login::logout');
+$routes->get('login/informacoes','Login::informacoes');
 
 // Proibir Acesso a pagina principal se não estiver logado
 $routes->group('/home', ['filter' => 'autenticacao'], function($routes){

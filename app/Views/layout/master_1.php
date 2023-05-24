@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="<?= base_url('assets/css/' . $css) ?>" />
     <?php endif; ?>
 
-    <title></title>
+    <title><?= $titulo ?? 'menu'?></title>
 </head>
 <navbar id="navbar">
     <header>
