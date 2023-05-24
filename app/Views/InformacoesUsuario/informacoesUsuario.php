@@ -29,7 +29,7 @@
         <p>Email</p>
         <div>
           <span contenteditable="false">exemplodeemail@gmail.com</span>
-          <img src="/app/Views/assets/editar.png" alt="alterar email" />
+          <img src="<?= base_url('assets/editar.png') ?>" alt="alterar email" />
 
           <button style="display: none">Salvar</button>
           <button style="display: none">Cancelar</button>
@@ -40,7 +40,7 @@
         <p>Nome</p>
         <div>
           <span> Nome Sobrenome </span>
-          <img src="/app/Views/assets/editar.png" alt="alterar nome" />
+          <img src="<?= base_url('assets/editar.png') ?>" alt="alterar nome" />
           <button style="display: none">Salvar</button>
           <button style="display: none">Cancelar</button>
         </div>
@@ -50,7 +50,7 @@
         <p>Senha</p>
         <div>
           <span>12345678910</span>
-          <img src="/app/Views/assets/editar.png" alt="alterar senha" />
+          <img src="<?= base_url('assets/editar.png') ?>" alt="alterar senha" />
           <button style="display: none">Salvar</button>
           <button style="display: none">Cancelar</button>
         </div>
