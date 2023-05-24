@@ -22,6 +22,11 @@ class Cliente extends BaseController
         return view('reserva/reservar');
     }
 
+    public function informacoes() 
+    {
+      //
+    }
+
     public function cadastrar()
     {
         if (!$this->request->is('post')) {

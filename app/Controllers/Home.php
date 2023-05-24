@@ -10,9 +10,7 @@ class Home extends BaseController
     // Redireciona para a Pagina principal
     public function index()
     {
-        echo view('layout/navbar');
-        echo view('teste');
-        return view('layout/footer');
+        return view('teste', ['css' => 'exQuarto.css']);
     }
 
     private function inserirUsuario()
