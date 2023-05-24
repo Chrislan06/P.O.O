@@ -73,6 +73,6 @@ class Login extends BaseController
             return redirect()->to('/');
         }
         
-        return view('informacoesLogin/informacoesLogin', ['css' => 'informacoesLogin','titulo' => 'Informações']);
+        return view('informacoesLogin/informacoesLogin', ['titulo' => 'Informações']);
     }
 }

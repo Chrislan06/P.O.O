@@ -1,4 +1,12 @@
 <?= $this->extend('layout/master_1') ?>
+
+<?= $this->section('css') ?>
+
+<link rel="stylesheet" href="<?= base_url('assets/css/exQuarto.css') ?>">
+
+<?= $this->endSection() ?>
+
+
 <?= $this->section('content') ?>
     <?= anchor('login/logout', 'logout') ?>
     <br>

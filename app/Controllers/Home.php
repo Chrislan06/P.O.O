@@ -10,7 +10,7 @@ class Home extends BaseController
     // Redireciona para a Pagina principal
     public function index()
     {
-        return view('teste', ['css' => 'exQuarto.css','titulo' => 'Teste']);
+        return view('teste', ['titulo' => 'Teste']);
     }
 
     private function inserirUsuario()

@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php if(isset($css)):?>
-    <link rel="stylesheet" href="<?= base_url('assets/css/') . $css ?>" />
-    <?php endif; ?>
+    <?= $this->renderSection('css') ?>
     <title><?= $titulo ?? '' ?></title>
   </head>
 
@@ -51,5 +49,5 @@
         </div>
       </div>
     </footer>
+<?= $this->renderSection('js') ?>
 </body>
-</footer>
