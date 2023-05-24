@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/informacoesUsuario.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/informacoesLogin.css') ?>" />
     <title>Document</title>
   </head>
 
@@ -28,7 +28,7 @@
       <div class="dados">
         <p>Email</p>
         <div>
-          <span contenteditable="false">exemplodeemail@gmail.com</span>
+          <span contenteditable="false"><?= session()->get('usuario')->email?></span>
           <img src="<?= base_url('assets/editar.png') ?>" alt="alterar email" />
 
           <button style="display: none">Salvar</button>
@@ -39,7 +39,7 @@
       <div class="dados">
         <p>Nome</p>
         <div>
-          <span> Nome Sobrenome </span>
+          <span> <?= session()->get('usuario')->nome ?></span>
           <img src="<?= base_url('assets/editar.png') ?>" alt="alterar nome" />
           <button style="display: none">Salvar</button>
           <button style="display: none">Cancelar</button>
@@ -47,9 +47,9 @@
       </div>
 
       <div class="dados">
-        <p>Senha</p>
+        <p>Mude sua Senha</p>
         <div>
-          <span>12345678910</span>
+          <span></span>
           <img src="<?= base_url('assets/editar.png') ?>" alt="alterar senha" />
           <button style="display: none">Salvar</button>
           <button style="display: none">Cancelar</button>
@@ -58,5 +58,5 @@
     </main>
   </body>
 
-  <script src="<?= base_url('assets/js/informacoesUsuario.js') ?>"></script>
+  <script src="<?= base_url('assets/js/informacoesLogin.js') ?>"></script>
 </html>

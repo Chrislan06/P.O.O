@@ -73,6 +73,6 @@ class Login extends BaseController
             return redirect()->to('/');
         }
         
-        return view('informacoesUsuario/informacoesUsuario');
+        return view('informacoesLogin/informacoesLogin');
     }
 }
