@@ -1,4 +1,4 @@
 .env
 /writable/session/*
-/writable/debugbar/ci
+/writable/debugbar/*
 /writable/logs/*.log
