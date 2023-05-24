@@ -25,7 +25,7 @@ class Admin extends BaseController
         if (!session()->has('admin') && !session()->has('usuario')) {
             return view('autenticacao/login_admin');
         }
-
+        
         return redirect()->to('/');
     }
 

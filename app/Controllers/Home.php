@@ -10,7 +10,9 @@ class Home extends BaseController
     // Redireciona para a Pagina principal
     public function index()
     {
-        return view('teste');
+        echo view('layout/navbar');
+        echo view('teste');
+        return view('layout/footer');
     }
 
     private function inserirUsuario()
