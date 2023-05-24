@@ -9,4 +9,3 @@
     <?php endif; ?>
     <?= anchor('/quarto','Quartos') ?>
     <br>
-</body>
