@@ -14,27 +14,37 @@ class Admin extends BaseController
     private $adminModel;
     private $usuarioModel;
 
+    /* 
+    Inicializando os models 
+    */
     public function __construct()
     {
         $this->adminModel = new AdminModel();
         $this->usuarioModel = new UsuarioModel();
     }
 
+
+    /* 
+        Redirecionando para página de Login de Admin caso não esteja logado
+    */
     public function index()
     {
-        if (!session()->has('admin') && !session()->has('usuario')) {
+        if (!session()->has('usuario')) {
             return view('autenticacao/login_admin');
         }
-        
+
         return redirect()->to('/');
     }
 
+    /* 
+        Verificando login de admin
+    */
     public function logar()
     {
         if (!$this->request->is('post')) {
             redirect()->to('/admin');
         }
-        
+
         $contaValida = $this->validate([
             'email' => 'required|valid_email',
             'senha' => 'required|min_length[8]',
@@ -63,16 +73,23 @@ class Admin extends BaseController
         }
 
         unset($adminBanco->senha);
-        session()->set('usuario',$adminBanco);
+        session()->set('usuario', $adminBanco);
         session()->set('admin', 'sim');
         return redirect()->to('/');
     }
 
+    /*
+        Redireciona para a tela de cadastro de usuário no sistema
+    */
     public function cadastro()
     {
         return view('registro/cadastrar_usuario');
     }
 
+
+    /*
+        Verifica o pedido de cadastro do admin
+    */
     public function cadastrar()
     {
         if (!$this->request->is('post')) {
@@ -95,9 +112,9 @@ class Admin extends BaseController
 
             // dd($this->usuarioModel->errors() !== null);
             $resultado = $this->usuarioModel->insert($data);
-            
+
             if (!$resultado) {
-                foreach ($this->usuarioModel->errors() as $error){
+                foreach ($this->usuarioModel->errors() as $error) {
                     $usuario->messages[] = $error;
                 }
                 throw new InvalidArgumentException();

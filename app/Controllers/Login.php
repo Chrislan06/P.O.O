@@ -11,32 +11,39 @@ class Login extends BaseController
 {
     private $usuarioModel;
 
+
+    /*
+        Criando os models necessários 
+    */
     public function __construct()
     {
         $this->usuarioModel = new UsuarioModel();
     }
+    
+    /*
+        Redirecionando para a página de login se não estiver logado 
+    */
     public function index()
     {
-        if (!session()->has('usuario') && !session()->has('admin')) {
+        if (!session()->has('usuario')) {
             return view('autenticacao/login');
         }
 
         return redirect()->to('/');
     }
-    //===================================================
 
     /*
         Verificando o pedido de login do usuario
     */
     public function logar()
     {
-        // Verificar se foi mandando no metodo POST
+        // Verifica se foi mandando no metodo POST
         if (!$this->request->is('post')) {
             return redirect()->to('/');
         }
 
 
-        // validar os campos enviados
+        // valida os campos enviados
         try {
             $usuario = new UsuarioEntity($this->request->getPost());
 
@@ -46,7 +53,7 @@ class Login extends BaseController
 
             $usuarioBanco = $this->usuarioModel->where('email', $usuario->email)->select('id,nome,email,senha')->first();
             $verificarSenha = password_verify($usuario->senha, $usuarioBanco?->senha ?? '');
-            // Verificar senha e existencia do usuario no banco
+            // Verificar senha e existência do usuario no banco
             if (!isset($usuarioBanco) || $verificarSenha === false) {
                 $usuario->messages[] = 'Email e/ou senha Incorreto(s)';
                 throw new InvalidArgumentException();
@@ -60,6 +67,9 @@ class Login extends BaseController
         }
     }
 
+    /*
+        Deslogar do sistema SHO
+    */
     public function logout()
     {
         session()->destroy();
@@ -67,6 +77,9 @@ class Login extends BaseController
         return redirect()->to('/');
     }
 
+    /*
+
+    */  
     public function informacoes()
     {
         if(!session()->has('usuario')){

@@ -11,12 +11,18 @@ use InvalidArgumentException;
 class Cliente extends BaseController
 {
     private $clienteModel;
-
+    
+    /*
+        Criando os models necessários 
+    */
     public function __construct()
     {
         $this->clienteModel = new ClienteModel();
     }
 
+    /*
+        Redirecionando para a página de reserva
+    */
     public function index()
     {
         return view('reserva/reservar');
@@ -27,6 +33,9 @@ class Cliente extends BaseController
       //
     }
 
+    /*
+        Realizando Cadastro de cliente
+    */
     public function cadastrar()
     {
         if (!$this->request->is('post')) {
