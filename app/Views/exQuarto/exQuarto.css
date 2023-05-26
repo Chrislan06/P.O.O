@@ -130,6 +130,10 @@
   box-sizing: border-box;
 }
 
+.nav-link{
+  font-weight: 750;
+}
+
 body {
   background-color: var(--bs-body-bg);
 }
