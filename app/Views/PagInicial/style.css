@@ -127,10 +127,6 @@ body {
   background-color: var(--bs-body-bg);
 }
 
-nav {
-  background-color: var(--bs-code-color);
-}
-
 .card {
   border: none;
   border-radius: 0;
@@ -155,6 +151,26 @@ nav {
 .carousel-control-next span {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.card-body a {
+  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
+  border-color: black;
+}
+
+.card-body a:focus {
+  outline: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+.card-body a:hover{
+  background: linear-gradient(
+    103.66deg,
+    rgba(156, 32, 158, 0.83) 0.02%,
+    rgba(205, 26, 59, 0.83) 100%
+  );
+  border-color: black;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 568px) {
