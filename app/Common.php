@@ -46,8 +46,14 @@ function cpfValido(string $cpf)
     }
     return true;
 }
+/**
+ * Função responsável por facilitar o retorno do caminho dos assets da aplicação
+ * @param string $file
+ * @param string $assetDir
+ * @return string
+ */
 
-function asset ($file = '', $assetDir = '')
+function asset (string $file = '', string $assetDir = '')
 {
     return base_url('assets/' . $assetDir . '/' . $file);    
 }
