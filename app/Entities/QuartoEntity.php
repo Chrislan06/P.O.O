@@ -15,6 +15,7 @@ class QuartoEntity extends Entity
         'descricao' => null,
         'preco' => null,
     ];
+    // Variavel para Generalizar os tipos Dos quartos
     private $tipoQuarto;
     protected $datamap = [];
     protected $dates   = ['criado_em', 'atualizado_em', 'deleted_at'];
