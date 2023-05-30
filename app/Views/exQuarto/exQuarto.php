@@ -2,7 +2,7 @@
 
 <?= $this->section('css') ?>
 
-<link rel="stylesheet" href="<?= asset('exQuarto.css','css') ?>"/>
+<link rel="stylesheet" href="<?= asset('exQuarto.css',) ?>"/>
 
 <?= $this->endSection() ?>
 
