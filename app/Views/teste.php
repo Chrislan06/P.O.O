@@ -20,4 +20,6 @@
     <br>
     <?= anchor('/login/informacoes','Informações de Login') ?>
     <br>
+    <?= anchor('/cliente/informacoes','Informações do Cliente') ?>
+    <br>
 <?= $this->endSection() ?>
