@@ -20,16 +20,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Perfi</a>
+                  <a class="nav-link active" aria-current="page" href="#" style="color: #ffffff;">Perfi</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Check-in</a>
+                  <a class="nav-link" href="#" style="color: #ffffff;">Check-in</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Check-out</a>
+                  <a class="nav-link" href="#" style="color: #ffffff;">Check-out</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff;">
                     Reservas
                   </a>
                   <ul class="dropdown-menu">
@@ -41,7 +41,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                  <a class="nav-link active" aria-current="page" href="#" style="color: #ffffff;">Logout</a>
                 </li>
               </ul>
             <form class="d-flex" role="search">
@@ -99,7 +99,7 @@
         scrolling="no"
       ></iframe>
       <a
-      href="https://calendar.google.com/calendar/u/0?cid=NjQ2ZTQwNzY1Yjc2ZTE1Y2YwZDdlYjBjMTU1ZTQ3Yzc4YjRjZWEwNjRmZGJiMGY4MjNlNjk1YTY5OTk3NGY4YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+      href="https://calendar.google.com/calendar/u/0?cid=NjQ2ZTQwNzY1Yjc2ZTE1Y2YwZDdlYjBjMTU1ZTQ3Yzc4YjRjZWEwNjRmZGJiMGY4MjNlNjk1YTY5OTk3NGY4YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank"
       >Editar agenda</a>
           </div>
 
