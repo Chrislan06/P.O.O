@@ -13,7 +13,7 @@ class QuartoModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['tipo','tipo_cama','tamanho','descricao'];
 
     // Dates
     protected $useTimestamps = true;
