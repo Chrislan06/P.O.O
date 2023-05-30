@@ -30,7 +30,7 @@ class Cliente extends BaseController
 
     public function informacoes() 
     {
-      //
+      return view('informacoesCliente/informacoesCliente');
     }
 
     /*

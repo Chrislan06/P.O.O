@@ -41,7 +41,8 @@ $routes->post('admin/logar','Admin::logar');
 $routes->get('/login','Login::index');
 $routes->post('/login/logar', 'Login::logar');
 $routes->get('login/logout','Login::logout');
-$routes->get('login/informacoes','Login::informacoes');
+
+$routes->get('login/informacoes','Login::informacoes',['filter' => 'autenticacao']);
 
 // Proibir Acesso a pagina principal se não estiver logado
 $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
@@ -54,6 +55,7 @@ $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->get('/','Cliente::index');
     $routes->get('index','Cliente::index');
     $routes->post('cadastrar','Cliente::cadastrar');
+    $routes->get('informacoes','Cliente::informacoes');
 });
 
 // Proibir Acesso as funções de admin se não tiver permissões de Admin
