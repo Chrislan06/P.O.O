@@ -2,7 +2,7 @@
 
 <?= $this->section('css') ?>
 
-<link rel="stylesheet" href="<?= base_url('assets/css/informacoesLogin') ?>">
+<link rel="stylesheet" href="<?= asset('informacoesLogin.css','css') ?>">
 
 <?= $this->endSection() ?>
 
