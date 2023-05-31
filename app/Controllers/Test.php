@@ -4,14 +4,16 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\AdminModel;
+use App\Models\QuartoModel;
 use App\Models\UsuarioModel;
 
 class Test extends BaseController
 {
     public function test()
     {
-        echo 'test';
+        $this->mostrarQuartos();
     }
+    
     
     private function inserirUsuario()
     {
@@ -55,5 +57,16 @@ class Test extends BaseController
             echo 'email válido';
         }
         
+    }
+
+    private function mostrarQuartos()
+    {
+        $quartoModel = new QuartoModel();
+
+        $quartos = $quartoModel->findAll();
+
+        $quartosFamilia = [];
+
+        dd($quartos);
     }
 }

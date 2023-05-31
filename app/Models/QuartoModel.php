@@ -10,7 +10,7 @@ class QuartoModel extends Model
     protected $table            = 'quartos';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = \App\Entities\QuartoEntity::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['tipo','tipo_cama','tamanho','descricao'];
