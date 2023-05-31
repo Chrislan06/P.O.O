@@ -69,8 +69,14 @@ class Test extends BaseController
         foreach ($quartos as $quarto) {
             $quarto->setTipoQuarto();
         }
+
+        foreach ($quartos as $quarto) {
+            if(str_contains($quarto->tipoQuarto->tipo,'SUÍTE')){
+                $quartosFamilia[] = $quarto;
+            }
+        }
           
 
-        dd($quartos);
+        dd($quartosFamilia);
     }
 }

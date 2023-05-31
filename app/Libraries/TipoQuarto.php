@@ -32,6 +32,7 @@ class TipoQuarto
 
     public function __get($name)
     {
-        return $name;
+        $methodName = 'retornar'.mb_convert_case($name,MB_CASE_TITLE);
+        return $this->$methodName();
     }
 }

@@ -48,4 +48,9 @@ class QuartoEntity extends Entity
         $this->tipoQuarto = new TipoQuarto($this->tipo,$this->tipoCama,$this->tamanho);
     }
 
+    public function getTipoQuarto()
+    {
+        return $this->tipoQuarto;
+    }
+
 }
