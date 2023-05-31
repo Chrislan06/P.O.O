@@ -43,6 +43,6 @@ class Usuario extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('usuario_migration');
+        $this->forge->dropTable('usuario');
     }
 }
