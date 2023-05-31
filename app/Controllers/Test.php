@@ -41,7 +41,7 @@ class Test extends BaseController
         }
     }
 
-    public function teste()
+    private function gmailTeste()
     {
         $email = 'Chri@gmail.com';
         if(empty($email)){
