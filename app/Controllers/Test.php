@@ -66,6 +66,10 @@ class Test extends BaseController
         $quartos = $quartoModel->findAll();
 
         $quartosFamilia = [];
+        foreach ($quartos as $quarto) {
+            $quarto->setTipoQuarto();
+        }
+          
 
         dd($quartos);
     }

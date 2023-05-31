@@ -25,7 +25,7 @@ class QuartoEntity extends Entity
     {
         if(is_null($data)){
             parent::__construct($data);
-            // $this->tipoQuarto = new TipoQuarto($this->attributes['tipo'],$this->attributes['tipoCama'],$this->attributes['tamanho']);
+            // $this->tipoQuarto = new TipoQuarto($this->attributes['tipo'], $this->attributes['tipoCama'], $this->attributes['tamanho']);
             return;
         }
         $this->tipoQuarto = new TipoQuarto($data['tipo'],$data['tipoCama'],$data['tamanho']);
@@ -41,6 +41,11 @@ class QuartoEntity extends Entity
     public function retornarPrecoFormatado()
     {
         return number_format($this->attributes['preco'],2,',','.');
+    }
+
+    public function setTipoQuarto()
+    {
+        $this->tipoQuarto = new TipoQuarto($this->tipo,$this->tipoCama,$this->tamanho);
     }
 
 }

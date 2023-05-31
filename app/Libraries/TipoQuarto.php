@@ -32,6 +32,6 @@ class TipoQuarto
 
     public function __get($name)
     {
-        
+        return $name;
     }
 }
