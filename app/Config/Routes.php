@@ -68,6 +68,8 @@ $routes->group('quarto', ['filter' => 'autenticacao'], function($routes){
     $routes->get('/','Quarto::index');
 });
 
+$routes->get('/teste','Teste::teste');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

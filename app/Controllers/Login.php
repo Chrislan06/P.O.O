@@ -78,7 +78,7 @@ class Login extends BaseController
     }
 
     /*
-
+        Retorna tela de informações de Login para o Usuário
     */  
     public function informacoes()
     {
