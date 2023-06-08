@@ -12,7 +12,7 @@ use InvalidArgumentException;
 class Cliente extends BaseController
 {
     private $clienteModel;
-    
+
     /*
         Criando os models necessários 
     */
@@ -29,9 +29,13 @@ class Cliente extends BaseController
         return view('reserva/reservar');
     }
 
-    public function informacoes() 
+    public function informacoes($id)
     {
-      return view('informacoesCliente/informacoesCliente');
+        $cliente = $this->clienteModel->find($id);
+        if (is_null($cliente)) {
+            return redirect()->to('/');
+        }
+        return view('informacoesCliente/informacoesCliente/' . $id, ['cliente' => $cliente]);
     }
 
     /*
@@ -51,7 +55,7 @@ class Cliente extends BaseController
         try {
             $cliente = new ClienteEntity($params);
 
-            if (count($cliente->messages) > 0){
+            if (count($cliente->messages) > 0) {
                 throw new InvalidArgumentException();
             }
 
@@ -66,31 +70,33 @@ class Cliente extends BaseController
 
             $resultado = $this->clienteModel->insert($data);
 
-            if(!$resultado){
+            if (!$resultado) {
                 throw new \InvalidArgumentException();
             }
 
-            return redirect()->to('/cliente')->with('success','Cliente Inserido com sucesso');
-        } 
-        catch (\InvalidArgumentException) {
+            return redirect()->to('/cliente')->with('success', 'Cliente Inserido com sucesso');
+        } catch (\InvalidArgumentException) {
             return redirect()->to('/cliente')->with('errors', $cliente->messages)->withInput();
         }
-        
     }
 
     public function editar($id)
     {
         $cliente = $this->clienteModel->find($id);
-        return view('reserva/reservar',['cliente' => $cliente]);
+        if (is_null($cliente)) {
+            return redirect()->to('/');
+        }
+        return view('reserva/reservar', ['cliente' => $cliente]);
     }
 
-    public function salvar($id){
+    public function salvar($id)
+    {
         $params = $this->request->getPost();
         $params['dataNascimento'] = new DateTime($params['dataNascimento']);
         // dd($data);
         try {
             $cliente = new ClienteEntity($params);
-            if(count($cliente->messages) > 0){
+            if (count($cliente->messages) > 0) {
                 throw new InvalidArgumentException();
             }
 
@@ -100,15 +106,15 @@ class Cliente extends BaseController
                 'cpf' => $cliente->getCPF(),
                 'data_nascimento' => $cliente->getDataNascimento()
             ];
-            $resultado = $this->clienteModel->update($id,$data);
+            $resultado = $this->clienteModel->update($id, $data);
 
-            if(!$resultado){
+            if (!$resultado) {
                 throw new InvalidArgumentException();
             }
 
             return redirect()->to('/');
         } catch (Exception) {
-            return redirect()->to('/cliente/editar/'.$id)->with('errors',$cliente->messages);
+            return redirect()->to('/cliente/editar/' . $id)->with('errors', $cliente->messages);
         }
     }
 }

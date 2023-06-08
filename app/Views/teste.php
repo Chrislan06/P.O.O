@@ -20,7 +20,7 @@
     <br>
     <?= anchor('/login/informacoes','Informações de Login') ?>
     <br>
-    <?= anchor('/cliente/informacoes','Informações do Cliente') ?>
+    <?= anchor('/cliente/informacoes/1','Informações do Cliente 1') ?>
     <br>
     <?= anchor('/cliente/editar/1','editar cliente') ?>
     <br>
