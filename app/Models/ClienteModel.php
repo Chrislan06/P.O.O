@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Entities\ClienteEntity;
 use CodeIgniter\Model;
 
 class ClienteModel extends Model
@@ -10,7 +11,7 @@ class ClienteModel extends Model
     protected $table            = 'clientes';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = App\Entities\Cliente::class;
+    protected $returnType       = ClienteEntity::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['nome','rg','cpf','data_nascimento'];

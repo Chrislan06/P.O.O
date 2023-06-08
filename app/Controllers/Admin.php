@@ -125,4 +125,9 @@ class Admin extends BaseController
             return redirect()->to('admin/cadastro')->with('errors', $usuario->messages)->withInput();
         }
     }
+
+    public function editar()
+    {
+
+    }
 }

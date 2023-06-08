@@ -67,6 +67,7 @@ class ClienteEntity extends Entity
 
     private function validarDataNascimento(DateTime $dataNascimento)
     {
+        
         // Verifica se a data de nascimento está vazia
         if (empty($dataNascimento)) {
             $this->messages['dataNascimento'] = 'Precisa preencher a data de nascimento';
@@ -128,6 +129,9 @@ class ClienteEntity extends Entity
     */
     public function getDataNascimento($formato = 'Y-m-d H:i:s')
     {
+        if(isset($this->attributes['data_nascimento']) && is_string($this->attributes['data_nascimento'])){
+            $this->attributes['dataNascimento'] = new DateTime($this->attributes['data_nascimento']);
+        }
         return $this->attributes['dataNascimento']->format($formato);
     }
 

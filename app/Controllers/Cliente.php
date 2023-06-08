@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Entities\ClienteEntity;
 use App\Models\ClienteModel;
 use DateTime;
+use Exception;
 use InvalidArgumentException;
 
 class Cliente extends BaseController
@@ -73,6 +74,41 @@ class Cliente extends BaseController
         } 
         catch (\InvalidArgumentException) {
             return redirect()->to('/cliente')->with('errors', $cliente->messages)->withInput();
+        }
+        
+    }
+
+    public function editar($id)
+    {
+        $cliente = $this->clienteModel->find($id);
+        return view('reserva/reservar',['cliente' => $cliente]);
+    }
+
+    public function salvar($id){
+        $params = $this->request->getPost();
+        $params['dataNascimento'] = new DateTime($params['dataNascimento']);
+        // dd($data);
+        try {
+            $cliente = new ClienteEntity($params);
+            if(count($cliente->messages) > 0){
+                throw new InvalidArgumentException();
+            }
+
+            $data = [
+                'nome' => $cliente->nome,
+                'rg' => $cliente->rg,
+                'cpf' => $cliente->getCPF(),
+                'data_nascimento' => $cliente->getDataNascimento()
+            ];
+            $resultado = $this->clienteModel->update($id,$data);
+
+            if(!$resultado){
+                throw new InvalidArgumentException();
+            }
+
+            return redirect()->to('/');
+        } catch (Exception) {
+            return redirect()->to('/cliente/editar/'.$id)->with('errors',$cliente->messages);
         }
     }
 }

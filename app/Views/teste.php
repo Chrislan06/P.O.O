@@ -22,4 +22,6 @@
     <br>
     <?= anchor('/cliente/informacoes','Informações do Cliente') ?>
     <br>
+    <?= anchor('/cliente/editar/1','editar cliente') ?>
+    <br>
 <?= $this->endSection() ?>
