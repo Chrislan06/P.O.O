@@ -10,16 +10,16 @@ class ReservaModel extends Model
     protected $table            = 'reservas';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['data_check_in','data_check_out','data_inicio','data_fim','id_quarto','id_cliente'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    protected $createdField  = 'criado_em';
+    protected $updatedField  = 'atualizado_em';
     protected $deletedField  = 'deleted_at';
 
     // Validation
