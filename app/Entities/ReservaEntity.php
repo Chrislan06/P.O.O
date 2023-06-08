@@ -32,7 +32,7 @@ class ReservaEntity extends Entity
     protected $casts   = [];
 
 
-    public function VerificarReserva()
+    public function verificarReserva()
     {
         $dataAtual = new DateTime();
         if($dataAtual > $this->attributes['dataFim']){
