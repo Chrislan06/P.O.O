@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Entities\UsuarioEntity;
 use App\Models\UsuarioModel;
+use Exception;
 use InvalidArgumentException;
 
 class Login extends BaseController
@@ -87,5 +88,45 @@ class Login extends BaseController
         }
         
         return view('informacoesLogin/informacoesLogin', ['titulo' => 'Informações']);
+    }
+
+    public function salvar()
+    {
+        if(!session()->has('usuario')){
+            return redirect()->to('/');
+        }
+
+        $params = $this->request->getPost();
+        
+        if(!isset($params['id'])){
+            return redirect()->to('/');
+        }
+        
+        try {
+            $usuario = new UsuarioEntity($params);
+            if($usuario->usuarioValido()){
+                throw new InvalidArgumentException();
+            }
+
+            $data = [
+                'nome' => $usuario->nome,
+                'email' => $usuario->email,
+                'senha' => $usuario->hashSenha(),
+            ];
+
+            $resultado = $this->usuarioModel->update($usuario->id,$data);
+            
+            if(!$resultado){
+                foreach ($this->usuarioModel->errors() as $error) {
+                    $usuario->messages[] = $error;
+                }
+                throw new InvalidArgumentException();
+            }
+
+            return redirect()->to('/');
+        } catch (\InvalidArgumentException) {
+            return redirect()->to('/usuario/editar/'.$usuario['id'])->with('errors',$usuario->messages);
+        }
+        
     }
 }

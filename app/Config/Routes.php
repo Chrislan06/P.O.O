@@ -56,7 +56,7 @@ $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->get('index','Cliente::index');
     $routes->post('cadastrar','Cliente::cadastrar');
     $routes->get('informacoes/(:num)','Cliente::informacoes/$1');
-    $routes->get('editar/(:num)','Cliente::editar/$1');
+    $routes->get('editar/(:num)','Cliente::editar/$1',['as' => 'editar.cliente']);
     $routes->post('editar/(:num)','Cliente::salvar/$1');
 });
 

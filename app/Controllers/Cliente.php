@@ -35,7 +35,7 @@ class Cliente extends BaseController
         if (is_null($cliente)) {
             return redirect()->to('/');
         }
-        return view('informacoesCliente/informacoesCliente/' . $id, ['cliente' => $cliente]);
+        return view('informacoesCliente/informacoesCliente', ['cliente' => $cliente]);
     }
 
     /*
@@ -92,6 +92,11 @@ class Cliente extends BaseController
     public function salvar($id)
     {
         $params = $this->request->getPost();
+        
+        if(!isset($params['id'])){
+            return redirect()->to('/');
+        }
+        
         $params['dataNascimento'] = new DateTime($params['dataNascimento']);
         // dd($data);
         try {
@@ -109,6 +114,7 @@ class Cliente extends BaseController
             $resultado = $this->clienteModel->update($id, $data);
 
             if (!$resultado) {
+                $cliente->messages[] = 'Erro ao editar';
                 throw new InvalidArgumentException();
             }
 

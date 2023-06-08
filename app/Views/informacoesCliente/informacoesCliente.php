@@ -12,26 +12,26 @@
 
       <div class="nome">
         <p class="apresentation">Nome do titular</p>
-        <p class="information">Luis da Silva</p>
+        <p class="information"><?= $cliente->nome ?></p>
       </div>
 
       <div class="rg">
         <p class="apresentation">RG do titular</p>
-        <p class="information">000000000000</p>
+        <p class="information"><?= $cliente->rg ?></p>
       </div>
 
       <div class="cpf">
         <p class="apresentation">CPF do Titular</p>
-        <p class="information">00000000000</p>
+        <p class="information"><?= $cliente->cpf ?></p>
       </div>
 
       <div class="nascimento-data">
         <p class="apresentation">Data de Nascimento</p>
-        <p class="information">00/00/0000</p>
+        <p class="information"><?= $cliente->getDataNascimento('d/m/Y') ?></p>
       </div>
 
       <a
-        href="/app/Views/editarReserva/editarReserva.html"
+        href="<?= url_to('editar.cliente', $cliente->id)?>"
         class="editar-reserva"
         >Editar reserva</a
       >
