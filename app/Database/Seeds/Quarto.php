@@ -22,7 +22,8 @@ class Quarto extends Seeder
                 Área de estar separada com sofás confortáveis e uma mesa de centro elegante.
                 
                 Banheiro privativo com banheira de hidromassagem ou chuveiro de alta pressão, fornecendo opções para relaxamento e revitalização.',
-                'tamanho' => '120 m²',
+                'tamanho' => '14m² tamanho',
+                'itens' => 'Banheiro privativo, Vista da cidade, Wi-Fi gratuito, Recepção 24 horas, Ar-condicionado',
                 'preco' => null,
             ],
 
@@ -36,7 +37,8 @@ class Quarto extends Seeder
                 Área de estar luxuosa com sofás de couro macios e uma mesa de centro moderna, perfeita para relaxar ou receber convidados.
                 
                 Banheiro privativo revestido de mármore, com uma espaçosa banheira de imersão e um chuveiro de efeito chuva, proporcionando uma experiência de spa.',
-                'tamanho' => '160 m²',
+                'itens' => 'Vista da natureza, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito',
+                'tamanho' => '14m² tamanho',
                 'preco' => null,
             ],
 
@@ -50,7 +52,8 @@ class Quarto extends Seeder
                 Iluminação suave e ambiente aconchegante, proporcionando um ambiente íntimo e relaxante para casais.
                 
                 Área de estar com poltronas confortáveis ou um pequeno sofá, oferecendo um espaço adicional para relaxar e desfrutar de momentos a dois.',
-                'tamanho' => '200 m²',
+                'tamanho' => '10m² tamanho',
+                'itens' => 'Vista da cidade, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito',
                 'preco' => null,
             ],
 
@@ -65,7 +68,8 @@ class Quarto extends Seeder
                 
                 Área de estar confortável com uma poltrona ou um pequeno sofá, perfeito para relaxar e desfrutar de conversas íntimas.
                 ',
-                'tamanho' => '240 m²',
+                'tamanho' => '10m² tamanho',
+                'itens' => 'Vista da natureza, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito' ,
                 'preco' => null,
             ],
 
@@ -79,7 +83,8 @@ class Quarto extends Seeder
                 Área de trabalho funcional, equipada com uma escrivaninha espaçosa, uma cadeira confortável e uma luminária adequada para facilitar tarefas e estudos.
                 
                 Armário ou guarda-roupa com espaço suficiente para armazenar roupas, malas e pertences pessoais de forma organizada.',
-                'tamanho' => '120 m²',
+                'tamanho' => '12 m² tamanho',
+                'itens' => 'Vista da cidade, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito' ,
                 'preco' => null,
             ],
 
@@ -93,7 +98,8 @@ class Quarto extends Seeder
                 Cama de solteiro com um colchão confortável e lençóis de qualidade, proporcionando um local agradável para descanso e relaxamento.
                 
                 Espaço funcionalmente projetado com mobiliário compacto, como uma cadeira confortável, uma mesa de cabeceira com gavetas e prateleiras para armazenamento.',
-                'tamanho' => '140 m²',
+                'tamanho' => '12m² tamanho',
+                'itens' => 'Vista da natureza, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito',
                 'preco' => null,
             ],
 
@@ -107,7 +113,8 @@ class Quarto extends Seeder
                 Decoração convidativa e alegre, com cores vibrantes e detalhes lúdicos, criando um ambiente descontraído e adequado para todas as idades.
                 
                 Área de estar separada com sofá, poltronas ou espaço para relaxamento em família, perfeito para momentos de convivência e entretenimento.',
-                'tamanho' => '240 m²',
+                'tamanho' => '20m² tamanho',
+                'itens' => 'Vista da cidade, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito',
                 'preco' => null,
             ],
 
@@ -121,7 +128,8 @@ class Quarto extends Seeder
                 Sala de estar separada com sofás confortáveis, poltronas aconchegantes e uma área de entretenimento com TV de tela plana, perfeita para momentos de convivência e relaxamento em família.
                 
                 Espaço amplo de armazenamento, como armários espaçosos e cômodas, para que a família possa organizar suas roupas e pertences pessoais de maneira conveniente.',
-                'tamanho' => '280 m²',
+                'tamanho' => '20m² tamanho',
+                'itens' => 'Vista da natureza, Recepção 24 horas, Banheiro privativo, Ar condicionado, Wi-fi gratuito' ,
                 'preco' => null,
             ],
         ];

@@ -30,6 +30,9 @@ class Quarto extends Migration
                 'descricao' => [
                     'type' => 'TEXT',
                 ],
+                'itens' => [
+                    'type' => 'TEXT',
+                ],
                 'preco' => [
                     'type' => 'DECIMAL',
                     'null' =>  false,

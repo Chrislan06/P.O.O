@@ -13,6 +13,7 @@ class QuartoEntity extends Entity
         'tipoCama' => null,
         'tamanho' => null,
         'descricao' => null,
+        'itens' => null,
         'preco' => null,
     ];
     // Variavel para Generalizar os tipos Dos quartos
@@ -53,4 +54,8 @@ class QuartoEntity extends Entity
         return $this->tipoQuarto;
     }
 
+    public function retornarItens()
+    {
+        return explode(', ',$this->attributes['itens']);
+    }
 }
