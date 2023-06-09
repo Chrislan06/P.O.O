@@ -124,10 +124,11 @@
   --bs-form-invalid-border-color: #dc3545;
 }
 body {
-  background-color: var(--bs-body-bg);
+  background-color: rgb(243, 243, 243);
 }
 
 .card {
+  background-color: rgb(241, 241, 241);
   border: none;
   border-radius: 0;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
@@ -153,35 +154,12 @@ body {
   height: 1.5rem;
 }
 
-.card-body a {
-  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
-  border-color: black;
-}
 
 .buttons a:nth-child(2) {
   float: right;
 
 }
 
-.card-body a:nth-child(1):focus {
-  outline: 2px solid black;
-  border-radius: 0.4rem;
-}
-
-.card-body a:nth-child(1):hover {
-  background: linear-gradient(
-    103.66deg,
-    rgba(156, 32, 158, 0.83) 0.02%,
-    rgba(205, 26, 59, 0.83) 100%
-  );
-  border-color: black;
-  cursor: pointer;
-}
-
-.card-body a:nth-child(2):hover {
-  border-color: black;
-  cursor: default;
-}
 
 @media screen and (min-width: 568px) {
   .cards-wrapper {
