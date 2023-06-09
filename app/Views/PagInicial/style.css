@@ -123,6 +123,11 @@
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 }
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   background-color: rgb(243, 243, 243);
 }

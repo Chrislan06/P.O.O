@@ -40,7 +40,7 @@ function filterQuartosButton(button) {
   }
 
   button.style.color = 'white'
-  button.style.backgroundColor = 'rgba(158, 6, 87, 0.966)'
+  button.style.backgroundColor = '#dc3545'
 
   let nameButton = button.textContent
 
