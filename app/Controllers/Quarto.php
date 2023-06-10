@@ -21,7 +21,6 @@ class Quarto extends BaseController
     {
         $reserva = $this->reservaModel->where('id_quarto', $id)->find()[0];
         $quarto = $this->quartoModel->find($id);
-        // dd(($quarto->retornardescricao()[1]));
         return view('exQuarto/exQuarto', ['titulo' => 'Quarto','reserva' => $reserva,'quarto' => $quarto]);
     }
 }

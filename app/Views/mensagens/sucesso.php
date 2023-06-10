@@ -10,8 +10,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="editado.css" />
+    <title><?= $title ?? 'Menu' ?></title>
+    <link rel="stylesheet" href="<?= asset('mensagem.css','css') ?>" />
   </head>
   <body>
     <div class="page">
@@ -20,7 +20,7 @@
           <h1><?= session()->get('sucesso')['titulo'] ?></h1>
           <p><?= session()->get('sucesso')['mensagem'] ?><br/></p>
         </div>
-        <button>Página Inicial</button>
+        <a href="/"><button>Página Inicial</button></a>
       </form>
     </div>
   </body>

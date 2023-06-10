@@ -85,7 +85,7 @@ class Cliente extends BaseController
             }
             $this->reservaModel->update($idReserva,['id_cliente' => $resultado]);
 
-            return redirect()->to('/sucesso')->with('success', ['titulo'=>'Reserva Feita com Sucesso', 'mensagem' => 'A reserva foi edita com sucesso']);
+            return redirect()->to('/sucesso')->with('sucesso', ['titulo'=>'Reserva Feita com Sucesso', 'mensagem' => 'A reserva foi Realizada com sucesso clique em baixo para voltar']);
         } catch (\InvalidArgumentException) {
             return redirect()->to('/cliente/'.(int)$idReserva)->with('errors', $cliente->messages)->withInput();
         }
@@ -129,7 +129,7 @@ class Cliente extends BaseController
                 throw new InvalidArgumentException();
             }
 
-            return redirect()->to('/');
+            return redirect()->to('/sucesso')->with('sucesso' , ['titulo' => 'Editado com sucesso','mensagem' => 'A reserva foi editada com sucesso clique no botão abaixo para voltar']);
         } catch (Exception) {
             return redirect()->to('/cliente/editar/' . $id)->with('errors', $cliente->messages);
         }
