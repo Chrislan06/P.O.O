@@ -35,8 +35,9 @@ class ReservaEntity extends Entity
     public function verificarReserva()
     {
         $dataAtual = new DateTime();
-        if($dataAtual > $this->attributes['data_fim']){
+        if($dataAtual > new DateTime($this->attributes['data_fim'])){
             $this->reserva = 'Indisponível';
+            $this->attributes['id_cliente'] = null;
             return false;
         }
 
@@ -56,12 +57,12 @@ class ReservaEntity extends Entity
             return;
         }
 
-        if($dataCheckIn > $this->attributes['data_fim'] || $dataCheckOut > $this->attributes['data_fim']){
+        if($dataCheckIn > new DateTime($this->attributes['data_fim']) || $dataCheckOut > new DateTime($this->attributes['data_fim'])){
             $this->messages['periodo'] = 'Não é possível marcar o checkIn/checkOut depois do fim do periodo de reserva';
             return;
         }
 
-        if($dataCheckIn < $this->attributes['data_inicio'] || $dataCheckOut < $this->attributes['data_inicio']){
+        if($dataCheckIn < new DateTime($this->attributes['data_inicio']) || $dataCheckOut < new DateTime($this->attributes['data_inicio'])){
             $this->messages['periodo'] = 'Não é possível marcar o checkIn/checkOut antes do inicio do periodo de reserva';
             return;
         }

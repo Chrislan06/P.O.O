@@ -1,4 +1,4 @@
-<?= $this->extend('layout/master_quarto') ?>
+<?= $this->extend('layout/master_principal') ?>
 
 <?= $this->section('css') ?>
 
