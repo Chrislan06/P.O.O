@@ -17,9 +17,8 @@
     <div class="page">
       <form action="">
         <div class="headline">
-          <h1>Reserva editada com sucesso</h1>
-          <p>Os dados do cliente foram modificados com sucesso<br/></p>
-          <p>Volte e confira as informações modificadas</p>
+          <h1><?= session()->get('sucesso')['titulo'] ?></h1>
+          <p><?= session()->get('sucesso')['mensagem'] ?><br/></p>
         </div>
         <button>Página Inicial</button>
       </form>

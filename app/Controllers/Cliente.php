@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Entities\ClienteEntity;
 use App\Models\ClienteModel;
+use App\Models\ReservaModel;
 use DateTime;
 use Exception;
 use InvalidArgumentException;
@@ -12,6 +13,7 @@ use InvalidArgumentException;
 class Cliente extends BaseController
 {
     private $clienteModel;
+    private $reservaModel;
 
     /*
         Criando os models necessários 
@@ -19,6 +21,7 @@ class Cliente extends BaseController
     public function __construct()
     {
         $this->clienteModel = new ClienteModel();
+        $this->reservaModel = new ReservaModel();
     }
 
     /*
@@ -26,7 +29,11 @@ class Cliente extends BaseController
     */
     public function index($id)
     {
-        return view('reserva/reservar');
+        $reserva = $this->reservaModel->find($id);
+        if(!$reserva->verificarReserva() || $reserva->reserva == 'Reservado'){
+            return redirect()->to('/');
+        }
+        return view('reserva/reservar',['cliente' => null,'reserva' => $reserva]);
     }
 
     public function informacoes($id)
@@ -50,6 +57,7 @@ class Cliente extends BaseController
         $params = $this->request->getPost();
         $params['dataNascimento'] = new DateTime($params['dataNascimento']);
         $idReserva = $params['idReserva'];
+        // dd($idReserva);
         unset($params['idReserva']);
         // dd($params);
 
@@ -70,15 +78,16 @@ class Cliente extends BaseController
 
             // dd($data);
 
-            $resultado = $this->clienteModel->insert($data);
+            $resultado = $this->clienteModel->insert($data,true);
 
             if (!$resultado) {
                 throw new \InvalidArgumentException();
             }
+            $this->reservaModel->update($idReserva,['id_cliente' => $resultado]);
 
-            return redirect()->to('/cliente')->with('success', 'Reserva Feita com Sucesso');
+            return redirect()->to('/sucesso')->with('success', ['titulo'=>'Reserva Feita com Sucesso', 'mensagem' => 'A reserva foi edita com sucesso']);
         } catch (\InvalidArgumentException) {
-            return redirect()->to('/cliente')->with('errors', $cliente->messages)->withInput();
+            return redirect()->to('/cliente/'.(int)$idReserva)->with('errors', $cliente->messages)->withInput();
         }
     }
 

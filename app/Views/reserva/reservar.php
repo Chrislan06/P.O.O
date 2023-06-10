@@ -15,10 +15,13 @@
   </head>
   <body>
     <div class="page">
-      <form action="<?= isset($cliente) ?  : 'cliente/cadastrar' ?>" method="post">
+      <form action="<?= isset($cliente) ?  : url_to('realizar.reserva.cliente') ?>" method="post">
         <div class="headline">
           <h1>Realizar<?= isset($cliente) ? 'Edição' : 'Reserva'?></h1>
         </div>
+        <?php if(isset($reserva)): ?>
+          <input type="hidden" name="idReserva" value="<?= $reserva->id ?>">
+        <?php endif; ?>
 
         <div class="input-wrapper">
           <label for="nome">Nome do titular</label>
@@ -48,13 +51,6 @@
 
         <button type="submit" id="finalizar">Finalizar</button>
       </form>
-      <?php if(session()->has('errors')): ?>
-        <ul>
-        <?php foreach(session()->get('errors') as $erro) : ?>
-          <li><?= $erro ?></li>
-        <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
     </div>
 
     <script src="<?=base_url('assets/js/reserva.js') ?>"></script>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AdminModel;
+use App\Models\ClienteModel;
 use App\Models\QuartoModel;
 use App\Models\ReservaModel;
 use App\Models\UsuarioModel;
@@ -12,10 +13,12 @@ class Home extends BaseController
 {
     private $quartoModel;
     private $reservaModel;
+    private $clienteModel;
     public function __construct()
     {
         $this->quartoModel = new QuartoModel();
         $this->reservaModel = new ReservaModel();
+        $this->clienteModel = new ClienteModel();
     }
 
     // Redireciona para a Pagina principal
@@ -24,10 +27,11 @@ class Home extends BaseController
         $reservas = $this->reservaModel->findAll();
         foreach ($reservas as $reserva) {
             $reserva->quarto = $this->quartoModel->find($reserva->idQuarto);
-            $reserva->verificarReserva();
+            if(!$reserva->verificarReserva() && isset($reserva->idCliente)){
+                $this->clienteModel->delete($reserva->idCliente);
+                $reserva->idCliente = null;
+            }
         }
-        $dataAtual = new DateTime();
-        // dd($reservas[0]->quarto->tipo,str_contains(mb_convert_case($reservas[0]->tipo,MB_CASE_LOWER),'família'));
         return view('PagInicial/pgInicial', ['reservas' => $reservas]);
     }
 }

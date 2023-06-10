@@ -51,8 +51,8 @@ $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
 
 // Proibir Acesso as funções de usuário se não estiver logado
 $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
-    $routes->get('/(:num)','Cliente::index/$1',['as' => 'reservar.cliente']);
-    $routes->post('cadastrar','Cliente::cadastrar');
+    $routes->get('(:num)','Cliente::index/$1',['as' => 'reservar.cliente']);
+    $routes->post('cadastrar','Cliente::cadastrar',['as' => 'realizar.reserva.cliente']);
     $routes->get('informacoes/(:num)','Cliente::informacoes/$1');
     $routes->get('editar/(:num)','Cliente::editar/$1',['as' => 'editar.cliente']);
     $routes->post('editar/(:num)','Cliente::salvar/$1');
@@ -70,6 +70,9 @@ $routes->group('quarto', ['filter' => 'autenticacao'], function($routes){
 
 // Rotas para Testes
 $routes->get('/teste','Test::test');
+
+// Rota para mensagens
+$routes->get('/sucesso','Sucesso::index');
 
 /*
  * --------------------------------------------------------------------
