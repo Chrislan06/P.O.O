@@ -7,8 +7,8 @@
  * 
  */
 
-
-function cpfValido(string $cpf)
+// var_dump(cpfValido());
+function cpfValido(string $cpf = '681.546.883-60')
 {
     $cpf = str_replace(['.', '-'], ['', ''], $cpf);
     $somador = 0;
@@ -18,7 +18,7 @@ function cpfValido(string $cpf)
     }
     $resto = $somador % 11;
 
-    if (($verificador1 = 11 - $resto) > 11) {
+    if (($verificador1 = 11 - $resto) >= 11) {
         $verificador1 = 0;
     }
     // die(var_dump($verificador1));
@@ -37,10 +37,10 @@ function cpfValido(string $cpf)
     $somador += $verificador1 * 2;
     $resto = $somador % 11;
 
-    if (($verificador2 = 11 - $resto) > 11) {
+    if (($verificador2 = 11 - $resto) >= 11) {
         $verificador2 = 0;
     }
-
+    var_dump($verificador2);
     if ($verificador2 != $cpf[10]) {
         return false;
     }

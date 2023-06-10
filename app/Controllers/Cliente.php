@@ -134,4 +134,13 @@ class Cliente extends BaseController
             return redirect()->to('/cliente/editar/' . $id)->with('errors', $cliente->messages);
         }
     }
+
+    public function cancelar($id)
+    {
+        $cliente = $this->reservaModel->where('id_cliente', $id)->find()[0];
+        if(isset($cliente)){
+            return redirect()->to('/');
+        }
+        return view('mensagens/cancelar',['titulo'=> 'Cancelar']);
+    }
 }
