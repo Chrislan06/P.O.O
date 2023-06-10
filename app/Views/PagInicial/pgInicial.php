@@ -27,7 +27,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title"><?= $reserva->quarto->tipo ?></h5>
-                    <p class="card-text"><?= $reserva->quarto->descricao ?></p>
+                    <p class="card-text"><?= $reserva->quarto->retornarDescricao()[0] ?></p>
                     <div class="buttons">
 
                       <a href="<?= url_to('visualizar.quarto',(int)$reserva->quarto->id) ?>" class="btn btn-primary"><strong>Visualizar quarto</strong></a>
