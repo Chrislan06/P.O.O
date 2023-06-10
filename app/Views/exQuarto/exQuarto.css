@@ -131,15 +131,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.nav-link {
-  font-weight: 750;
-}
-
 body {
   background-color: var(--bs-body-bg);
 }
 
 nav {
+  font-weight: 750;
   background-color: #dc3545;
 }
 
@@ -147,6 +144,11 @@ nav i {
   display: flex;
   text-align: right;
   margin-right: 20px;
+}
+
+nav a:hover{
+  transition: 0.5s;
+  opacity: 0.7;
 }
 
 img {
