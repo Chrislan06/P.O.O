@@ -30,7 +30,7 @@
                     <p class="card-text"><?= $reserva->quarto->descricao ?></p>
                     <div class="buttons">
 
-                      <a href="#" class="btn btn-primary"><strong>Visualizar quarto</strong></a>
+                      <a href="<?= url_to('visualizar.quarto',(int)$reserva->quarto->id) ?>" class="btn btn-primary"><strong>Visualizar quarto</strong></a>
                       <?php if(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'suíte')) : ?>
                       <p class="tamanho"><strong>Estilo: Suíte</strong></p>
                       <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'casal')) : ?>

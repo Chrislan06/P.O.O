@@ -24,7 +24,7 @@ class Cliente extends BaseController
     /*
         Redirecionando para a página de reserva
     */
-    public function index()
+    public function index($id)
     {
         return view('reserva/reservar');
     }
@@ -49,6 +49,8 @@ class Cliente extends BaseController
 
         $params = $this->request->getPost();
         $params['dataNascimento'] = new DateTime($params['dataNascimento']);
+        $idReserva = $params['idReserva'];
+        unset($params['idReserva']);
         // dd($params);
 
 
@@ -74,7 +76,7 @@ class Cliente extends BaseController
                 throw new \InvalidArgumentException();
             }
 
-            return redirect()->to('/cliente')->with('success', 'Cliente Inserido com sucesso');
+            return redirect()->to('/cliente')->with('success', 'Reserva Feita com Sucesso');
         } catch (\InvalidArgumentException) {
             return redirect()->to('/cliente')->with('errors', $cliente->messages)->withInput();
         }

@@ -2,7 +2,7 @@
 
 <?= $this->section('css') ?>
 
-<link rel="stylesheet" href="<?= asset('exQuarto.css',) ?>"/>
+<link rel="stylesheet" href="<?= asset('exQuarto.css','css') ?>"/>
 
 <?= $this->endSection() ?>
 
@@ -58,12 +58,9 @@
           </div>
 
             <div class="infos">
-              <p>Banheiro privativo</p>
-              <p>Vista da cidade</p>
-              <p>Wi-Fi gratuito</p>
-              <p>Recepção 24 horas</p>
-              <p>Ar-condicionado</p>
-              <p>12m² tamanho</p>
+            <?php foreach($quarto->retornarItens() as $item) : ?>
+            <p><?= $item ?></p>
+            <?php endforeach; ?>
             </div>
 
         </div>
@@ -71,27 +68,20 @@
         <div class="right-content">
           <div class="texto">
             <h2>Descrição do quarto:</h2>
-            <p>
-              Quarto familiar espaçoso e luxuoso, projetado para acomodar confortavelmente famílias maiores ou grupos de amigos.
-            </p>
-    
-            <p>
-              Camas king-size e camas de solteiro, com colchões de alta qualidade e lençóis macios, garantindo uma experiência de sono tranquila e rejuvenescedora para todos os membros da família
-            </p>
-    
-            <p>
-              Sala de estar separada com sofás confortáveis, poltronas aconchegantes e uma área de entretenimento com TV de tela plana, perfeita para momentos de convivência e relaxamento em família.
-            </p>
-    
-            <p>
-              Espaço amplo de armazenamento, como armários espaçosos e cômodas, para que a família possa organizar suas roupas e pertences pessoais de maneira conveniente.
-            </p>
+            <?php foreach($quarto->retornarDescricao() as $descricao) : ?>
+            <?php if(strlen($descricao) > 1) : ?>
+            <p><?= $descricao ?></p>
+            <?php endif; ?>
+            <?php endforeach; ?>
           </div>
 
           <div class="buttons">
-            <a href="/app/Views/reservar/reservar.html" class="button" id="reservar">Reservar Quarto</a>
+            <?php if($reserva->verificarReserva() && $reserva->reserva == 'Disponível') : ?>
+            <a href="<?= url_to('reservar.cliente',(int)$reserva->id) ?>" class="button" id="reservar">Reservar Quarto</a>
+            <?php elseif($reserva->verificarReserva() && $reserva->reserva == 'Reservado') : ?>
             <a href="/app/Views/cancelarReserva/cancelar.html" class="button" id="cancelar">Cancelar Reserva</a>
             <a href="/app/Views/informaçõesCliente/informacoesCliente.html" class="button" id="info">Informações de Reserva</a>
+            <?php endif; ?>
           </div>
 
         </div>

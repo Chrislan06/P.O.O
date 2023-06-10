@@ -36,7 +36,7 @@ class QuartoEntity extends Entity
 
     public function retornarDescricao()
     {
-        return $this->attributes['descricao'];        
+        return explode("\n",$this->attributes['descricao']);        
     }
 
     public function retornarPrecoFormatado()
