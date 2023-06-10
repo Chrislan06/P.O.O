@@ -20,7 +20,7 @@ a {
 
 .page {
   height: 100vh;
-  background-image: url(/app/Views/assets/loginImage.jpg);
+  background-image: url(/public/assets/loginImage.jpg);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="informacoesEstilo.css" />
   </head>
   <body>
     <div class="page">
-      <h1 class="info-cliente">Veja as informações do cliente</h1>
+      <form> 
+        <div class="headline">
+          <h1>Informações de Reserva</h1>
+        </div>
 
-      <div class="nome">
-        <p class="apresentation">Nome do titular</p>
-        <p class="information">Luis da Silva</p>
-      </div>
+        <div class="info-wrapper">
+          <h2>Nome do titular</h2>
+          <p>Luís da Silva</p>
+        </div>
 
-      <div class="rg">
-        <p class="apresentation">RG do titular</p>
-        <p class="information">000000000000</p>
-      </div>
+        <div class="info-wrapper">
+          <h2>RG</h2>
+          <p>00000000000</p>
+        </div>
 
-      <div class="cpf">
-        <p class="apresentation">CPF do Titular</p>
-        <p class="information">00000000000</p>
-      </div>
+        <div class="info-wrapper">
+          <h2>CPF</h2>
+          <p>000.000.000-00</p>
+        </div>
 
-      <div class="nascimento-data">
-        <p class="apresentation">Data de Nascimento</p>
-        <p class="information">00/00/0000</p>
-      </div>
+        <div class="info-wrapper">
+          <h2>Data de Nascimento</h2>
+          <p>14/03/2003</p>
+        </div>
 
-      <a
-        href="/app/Views/informaçõesCliente/informacoesCliente.html"
-        class="btn btn-primary btn-lg"
-        id="info"
-        >Informações de Reserva</a
-      >
+        <a href="/app/Views/editarReserva/editarReserva.html" class="edit">Editar Reserva</a>
+      </form>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/a9f38024b9.js" crossorigin="anonymous"></script>
   </body>
 </html>

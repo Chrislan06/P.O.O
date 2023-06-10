@@ -1,95 +1,106 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 :root {
   font-size: 62.5%;
 }
 
-body{
+body {
   font-size: 1.6rem;
   font-family: 'Titillium Web', sans-serif;
 }
 
-
-navbar {
-  display: flex;
-  background-color: #9C209E;
-  color: white;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
+a {
+  all: unset;
+  box-sizing: border-box;
 }
 
-.navbar-container{
+.page {
+  height: 100vh;
+  background-image: url(/public/assets/loginImage.jpg);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 85%;
-  padding: 2rem 0;
+  justify-content: center;
 }
 
-.navbar-container img {
-  width: 4rem;
-  height: 4rem;
-  color: white;
+.headline {
+  display: grid;
+  width: 100%;
+  margin-top: 20px;
+  justify-content: center;
 }
 
-.navbar-container ul {
+form {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  width: 40rem;
+  height: 65rem;
+
+  border-radius: 10px;
+
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+h1 {
   display: flex;
-  list-style: none;
-  
+  justify-content: center;
+  font-size: 3rem;
+  text-shadow: 3px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-.navbar-container ul a {
-  font-size: 1.7rem;
-  padding: 0 2rem;
+.info-wrapper {
+  display: grid;
 }
 
-.navbar-container ul a:nth-child(5){
+.info-wrapper h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
-.navbar-container ul a:hover {
+.info-wrapper p {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+
+  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
+  border-radius: 0.4rem;
+
+  font-weight: bold;
+  line-height: 2.4rem;
+
+  color: white;
+  margin-block: 3rem;
+  margin-top: 2rem;
+}
+
+.edit:focus {
+  outline: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+.edit:hover {
+  background: linear-gradient(
+    103.66deg,
+    rgba(156, 32, 158, 0.83) 0.02%,
+    rgba(205, 26, 59, 0.83) 100%
+  );
   cursor: pointer;
 }
-
-.page{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-h1{
-  margin-top: 10rem;
-  color: #9C209E;
-  font-size: 3rem;
-}
-
-.nome {
-  margin-top: 1.3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.apresentation{
-  font-size: 3rem;
-  color: #9C209E;
-  font-weight: bold;
-  line-height: 5rem; 
-}
-
-.information{
-  text-align: center;
-  width: 100%;
-  font-size: 2rem;
-  margin-block: 0 2.3rem;
-}
-
