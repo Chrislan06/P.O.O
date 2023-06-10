@@ -25,7 +25,7 @@ class ReservaEntity extends Entity
         'idQuarto' => 'id_quarto',
     ];
     public $cliente;
-    public $quartos;
+    public $quarto;
     public $reserva;
     public $messages;
     protected $dates   = ['criado_em', 'atualizado_em', 'deleted_at'];
@@ -35,7 +35,7 @@ class ReservaEntity extends Entity
     public function verificarReserva()
     {
         $dataAtual = new DateTime();
-        if($dataAtual > $this->attributes['dataFim']){
+        if($dataAtual > $this->attributes['data_fim']){
             $this->reserva = 'Indisponível';
             return false;
         }
@@ -56,12 +56,12 @@ class ReservaEntity extends Entity
             return;
         }
 
-        if($dataCheckIn > $this->attributes['dataFim'] || $dataCheckOut > $this->attributes['dataFim']){
+        if($dataCheckIn > $this->attributes['data_fim'] || $dataCheckOut > $this->attributes['data_fim']){
             $this->messages['periodo'] = 'Não é possível marcar o checkIn/checkOut depois do fim do periodo de reserva';
             return;
         }
 
-        if($dataCheckIn < $this->attributes['dataInicio'] || $dataCheckOut < $this->attributes['dataInicio']){
+        if($dataCheckIn < $this->attributes['data_inicio'] || $dataCheckOut < $this->attributes['data_inicio']){
             $this->messages['periodo'] = 'Não é possível marcar o checkIn/checkOut antes do inicio do periodo de reserva';
             return;
         }
@@ -71,12 +71,12 @@ class ReservaEntity extends Entity
             return;
         }
 
-        $this->attributes['dataCheckIn'] = $dataCheckIn;
-        $this->attributes['dataCheckOut'] = $dataCheckOut;
+        $this->attributes['data_check_in'] = $dataCheckIn;
+        $this->attributes['data_check_out'] = $dataCheckOut;
     }
     
     public function calcularPreco(){
-       $tempoEmDias = diferencaEmDias($this->attributes['dataCheckIn'], $this->attributes['dataCheckOut']);     
+       $tempoEmDias = diferencaEmDias($this->attributes['data_check_in'], $this->attributes['data_check_out']);     
 
        return $this->quarto->preco * $tempoEmDias;
     }

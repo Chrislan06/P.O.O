@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Entities\ReservaEntity;
 use CodeIgniter\Model;
 
 class ReservaModel extends Model
@@ -10,7 +11,7 @@ class ReservaModel extends Model
     protected $table            = 'reservas';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'object';
+    protected $returnType       = ReservaEntity::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['data_check_in','data_check_out','data_inicio','data_fim','id_quarto','id_cliente'];
