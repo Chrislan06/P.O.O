@@ -141,6 +141,12 @@ class Cliente extends BaseController
         if(isset($cliente)){
             return redirect()->to('/');
         }
-        return view('mensagens/cancelar',['titulo'=> 'Cancelar']);
+        return view('mensagens/cancelar',['titulo'=> 'Cancelar', 'cliente' => $cliente]);
+    }
+
+    public function delete($id)
+    {
+        $this->clienteModel->delete($id);
+        return redirect()->to('/');
     }
 }

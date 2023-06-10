@@ -56,6 +56,8 @@ $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->get('informacoes/(:num)','Cliente::informacoes/$1');
     $routes->get('editar/(:num)','Cliente::editar/$1',['as' => 'editar.cliente']);
     $routes->post('editar/(:num)','Cliente::salvar/$1');
+    $routes->get('cancelar/(:num)','Cliente::cancelar/$1',['as'=>'cancelar.cliente']);
+    $routes->get('cancelar/confirmar/(:num)','Cliente::delete/$1',['as'=>'cancelar.confirmar.cliente']);
 });
 
 // Proibir Acesso as funções de admin se não tiver permissões de Admin
