@@ -36,6 +36,7 @@ class Home extends BaseController
             }
         }
         $fotos = $this->fotoModel->findAll();
+        // dd($fotos[0]->link);
         return view('PagInicial/pgInicial', ['reservas' => $reservas,'fotos' => $fotos]);
     }
 
@@ -50,6 +51,7 @@ class Home extends BaseController
                 $reserva->idCliente = null;
             }
         }
-        return view('paginadeFiltros/pagFiltro',['reservas' => $reservas,'filtro' => true]);
+        $fotos = $this->fotoModel->findAll();
+        return view('paginadeFiltros/pagFiltro',['reservas' => $reservas,'filtro' => true,'fotos' => $fotos]);
     }
 }

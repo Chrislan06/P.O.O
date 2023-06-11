@@ -1,7 +1,8 @@
 <?= $this->extend('layout/master_principal') ?>
+
 <?= $this->section('css') ?>
 
-<link rel="stylesheet" href="<?= asset('pgInicial.css','css') ?>">
+<link rel="stylesheet" href="<?= asset('pgInicial.css', 'css') ?>">
 
 <?= $this->endSection() ?>
 
@@ -12,7 +13,7 @@
       <div id="carouselExampleIndicators" class="carousel slide d-none d-sm-block">
         <div class="carousel-indicators">
           <?php for ($i = 0; $i < intdiv(count($reservas) + 1, 3); $i++) : ?>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?=  $i ?>" <?= $i === 0 ? 'class="active"  aria-current="true"' : ''?> aria-label="Slide <?= ($i+1) ?>"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i ?>" <?= $i === 0 ? 'class="active"  aria-current="true"' : '' ?> aria-label="Slide <?= ($i + 1) ?>"></button>
           <?php endfor; ?>
         </div>
         <div class="carousel-inner">
@@ -23,21 +24,26 @@
                 <?php endif; ?>
                 <div class="card">
                   <div class="image-wrapper">
-                    <img src="/public/assets/quartos/suíte/LondonClingon/suiteLC1.jpg" alt="...">
+                    <?php foreach ($fotos as $foto) : ?>
+                      <?php if ($foto->id_quarto === $reserva->idQuarto) : ?>
+                        <img src="<?= asset("$foto->link" . '1.jpg', 'quartos') ?>" alt="...">
+                      <?php break;
+                      endif; ?>
+                    <?php endforeach; ?>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title"><?= $reserva->quarto->tipo ?></h5>
                     <p class="card-text"><?= $reserva->quarto->retornarDescricao()[0] ?></p>
                     <div class="buttons">
 
-                      <a href="<?= url_to('visualizar.quarto',(int)$reserva->quarto->id) ?>" class="btn btn-primary"><strong>Visualizar quarto</strong></a>
-                      <?php if(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'suíte')) : ?>
-                      <p class="tamanho"><strong>Estilo: Suíte</strong></p>
-                      <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'casal')) : ?>
+                      <a href="<?= url_to('visualizar.quarto', (int)$reserva->quarto->id) ?>" class="btn btn-primary"><strong>Visualizar quarto</strong></a>
+                      <?php if (str_contains(mb_convert_case($reserva->quarto->tipo, MB_CASE_LOWER), 'suíte')) : ?>
+                        <p class="tamanho"><strong>Estilo: Suíte</strong></p>
+                      <?php elseif (str_contains(mb_convert_case($reserva->quarto->tipo, MB_CASE_LOWER), 'casal')) : ?>
                         <p class="tamanho"><strong>Estilo: Casal</strong></p>
-                      <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'solteiro')): ?>
+                      <?php elseif (str_contains(mb_convert_case($reserva->quarto->tipo, MB_CASE_LOWER), 'solteiro')) : ?>
                         <p class="tamanho"><strong>Estilo: Solteiro</strong></p>
-                      <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'família')): ?>
+                      <?php elseif (str_contains(mb_convert_case($reserva->quarto->tipo, MB_CASE_LOWER), 'família')) : ?>
                         <p class="tamanho"><strong>Estilo: Família</strong></p>
                       <?php endif; ?>
                       <div class="card-footer">
@@ -47,11 +53,11 @@
                     </div>
                   </div>
                 </div>
-                <?php if($reserva->id % 3 == 0 || count($reservas) == $reserva->id) : ?>
+                <?php if ($reserva->id % 3 == 0 || count($reservas) == $reserva->id) : ?>
                 </div>
               </div>
-              <?php endif;?>
-            <?php endforeach; ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
 
 
         </div>

@@ -13,12 +13,12 @@ class Fotos extends Seeder
 
         $fotos = [
             [
-                'link' => 'suíte/LondonClingo/suiteLC',
+                'link' => 'suite/LondonClingo/suiteLC',
                 'id_quarto' => 1
             ],
 
             [
-                'link' => 'suíte/heavenDoor/suiteHD',
+                'link' => 'suite/heavenDoor/suiteHD',
                 'id_quarto' => 2
             ],
 
