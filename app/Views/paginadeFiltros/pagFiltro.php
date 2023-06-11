@@ -19,8 +19,8 @@
           <button class="button">Família</button>
         </div>
       </div>
-
       <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach($reservas as $reserva) : ?>
         <div class="quarto" id="quartoTeste">
 
           <div class="col">
@@ -31,213 +31,31 @@
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="card-title">Suíte London Clingon</h5>
+                <h5 class="card-title"><?= $reserva->quarto->tipo ?></h5>
                 <p class="card-text">
-                  Quarto espaçoso e luxuoso, projetado para proporcionar conforto e relaxamento.
-
-                  Cama king-size com lençóis macios e travesseiros de alta qualidade para garantir uma ótima noite de sono.
-
+                  <?= $reserva->quarto->retornarDescricao()[0] ?>
                 </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
+                <a href="<?= url_to('visualizar.quarto',(int)$reserva->idQuarto) ?>" class="btn btn-primary">Vizualizar quarto</a>
+                <?php if(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'suíte')) : ?>
                 <p class="tamanho"><strong>Tam: Suíte</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Disponível</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-        
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/suíte/heavenDoor/suiteHD1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Suíte Heaven's Door</h5>
-                <p class="card-text">
-                  Suíte espaçosa e moderna, projetada com um estilo contemporâneo e elegante.
-
-                  Quarto com uma cama king-size com lençóis de algodão egípcio e travesseiros de plumas, oferecendo conforto supremo.
-                  </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Suíte</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Reservado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/casal/FRoom/casalFRoom1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Casal Franch Room</h5>
-                <p class="card-text">
-                  Quarto de casal acolhedor e charmoso, projetado para criar uma atmosfera romântica e relaxante.
-
-                  Cama queen-size com colchão macio e lençóis de alta qualidade, garantindo uma noite de sono tranquila.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Casal</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Indisponível</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/casal/LDeluxe/casalLD1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Casal Love Deluxe</h5>
-                <p class="card-text">
-                  Quarto de casal elegante e contemporâneo, projetado com um estilo moderno e sofisticado.
-
-                  Cama king-size com um colchão luxuoso e lençóis de alta qualidade.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Casal</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Reservado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/solteiro/LHeart/solteiroLH1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Solteiro Loneliness Heart</h5>
-                <p class="card-text">
-                  Quarto de solteiro aconchegante e funcional, projetado para atender às necessidades de conforto e praticidade de um único hóspede.
-
-                  Cama de solteiro com colchão confortável e lençóis macios, proporcionando um espaço acolhedor para descanso.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Solteiro</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Reservado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/solteiro/BadC/solteiroBC1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Solteiro Bad Company</h5>
-                <p class="card-text">
-                  
-                  Quarto de solteiro moderno e compacto, projetado para oferecer conforto e funcionalidade em um espaço otimizado.
-
-                  Área de trabalho prática, com uma mesa compacta, uma cadeira ergonômica.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Solteiro</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Reservado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        
-        <div class="quarto" id="quartoTeste">
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/familia/ULove/familiaUL1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Família United Love</h5>
-                <p class="card-text">
-                  Quarto familiar espaçoso e acolhedor, projetado para acomodar confortavelmente famílias ou grupos.
-
-                  Camas confortáveis e versáteis, com opções de camas de casal e camas de solteiro.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
+                <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'família')) : ?>
                 <p class="tamanho"><strong>Tam: Família</strong></p>
+                <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'solteiro')) : ?>
+                <p class="tamanho"><strong>Tam: Solteiro</strong></p>
+                <?php elseif(str_contains(mb_convert_case($reserva->quarto->tipo,MB_CASE_LOWER),'casal')) : ?>
+                <p class="tamanho"><strong>Tam: Casal</strong></p>
+                <?php endif; ?>
                 <div class="card-footer">
-                  <p class="dispo">Reservado</p>
+                  <p class="dispo"><?= $reserva->reserva ?></p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
+<?php endforeach; ?>
         
-        <div class="quarto" id="quartoTeste">
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="/public/assets/quartos/familia/GrassHome/familaGH1.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Família Grass of Home</h5>
-                <p class="card-text">
-                  Quarto familiar espaçoso e luxuoso, projetado para acomodar confortavelmente famílias maiores ou grupos de amigos.
-
-                  Camas king-size e camas de solteiro, com colchões de alta qualidade e lençóis macios.
-                </p>
-                <a href="#" class="btn btn-primary">Vizualizar quarto</a>
-                <p class="tamanho"><strong>Tam: Família</strong></p>
-                <div class="card-footer">
-                  <p class="dispo">Reservado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+        
         
       </div>
       
