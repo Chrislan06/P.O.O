@@ -1,5 +1,4 @@
 <?= $this->extend('layout/master_principal') ?>
-
 <?= $this->section('css') ?>
 
 <link rel="stylesheet" href="<?= asset('pgInicial.css', 'css') ?>">
@@ -24,12 +23,7 @@
                 <?php endif; ?>
                 <div class="card">
                   <div class="image-wrapper">
-                    <?php foreach ($fotos as $foto) : ?>
-                      <?php if ($foto->id_quarto === $reserva->idQuarto) : ?>
-                        <img src="<?= asset("$foto->link" . '1.jpg', 'quartos') ?>" alt="...">
-                      <?php break;
-                      endif; ?>
-                    <?php endforeach; ?>
+                        <img src="<?= asset($fotos[(int)$reserva->idQuarto-1]->link . '1.jpg', 'quartos') ?>" alt="...">
                   </div>
                   <div class="card-body">
                     <h5 class="card-title"><?= $reserva->quarto->tipo ?></h5>

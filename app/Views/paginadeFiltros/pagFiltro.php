@@ -26,7 +26,7 @@
           <div class="col">
             <div class="card h-100">
               <img
-                src="/public/assets/quartos/suíte/LondonClingon/suiteLC1.jpg"
+                src="<?= asset($fotos[(int)$reserva->idQuarto-1]->link.'1.jpg','quartos') ?>"
                 class="card-img-top"
                 alt="..."
               />

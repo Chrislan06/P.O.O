@@ -36,7 +36,7 @@ class Home extends BaseController
             }
         }
         $fotos = $this->fotoModel->findAll();
-        // dd($fotos[0]->link);
+        // dd($fotos[7]->id_quarto, $reservas[0]->idQuarto);
         return view('PagInicial/pgInicial', ['reservas' => $reservas,'fotos' => $fotos]);
     }
 
