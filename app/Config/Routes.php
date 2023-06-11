@@ -43,10 +43,11 @@ $routes->post('/login/logar', 'Login::logar');
 $routes->get('login/logout','Login::logout',['as' => 'logout']);
 $routes->get('login/informacoes','Login::informacoes',['filter' => 'autenticacao']);
 
-// Proibir Acesso a pagina principal se não estiver logado
+// Proibir Acesso a pagina principal e de filtro se não estiver logado
 $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
     $routes->get('/', 'Home::index');
     $routes->get('index', 'Home::index');
+    $routes->get('filtros','Home::filtros',['as' => 'filtros']);
 });
 
 // Proibir Acesso as funções de usuário se não estiver logado
@@ -55,7 +56,7 @@ $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->post('cadastrar','Cliente::cadastrar',['as' => 'realizar.reserva.cliente']);
     $routes->get('informacoes/(:num)','Cliente::informacoes/$1',['as' => 'informacoes.cliente']);
     $routes->get('editar/(:num)','Cliente::editar/$1',['as' => 'editar.cliente']);
-    $routes->post('editar/(:num)','Cliente::salvar/$1');
+    $routes->post('editar/(:num)','Cliente::salvar/$1',['as' => 'editar.cliente.confirmar']);
     $routes->get('cancelar/(:num)','Cliente::cancelar/$1',['as'=>'cancelar.cliente']);
     $routes->get('cancelar/confirmar/(:num)','Cliente::delete/$1',['as'=>'cancelar.confirmar.cliente']);
 });

@@ -11,7 +11,7 @@ class Test extends BaseController
 {
     public function test()
     {
-        $this->mostrarQuartos();
+        return view('PagdeBase/pagFiltro');
     }
     
     

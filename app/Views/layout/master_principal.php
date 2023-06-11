@@ -17,31 +17,37 @@
 </head>
 
 <body>
-    <div class="container-fluid"></div>
-    <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/" style="color: #ffffff">Início</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="/app/Views/paginadeFiltros/pagFiltro.html" style="color: #ffffff">
-                        Pesquisar Reservas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= url_to('logout') ?>" style="color: #ffffff">Logout</a>
-                </li>
-            </ul>
-        </div>
+    <header>
+        <div class="container-fluid"></div>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" style="color: #ffffff">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="<?= url_to('filtros') ?>" style="color: #ffffff">
+                            Pesquisar Reservas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?= url_to('logout') ?>" style="color: #ffffff">Logout</a>
+                    </li>
+                </ul>
+                <?php if(isset($filtro)) : ?>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Escreva aqui..." aria-label="Search">
+                </form>
+                <?php endif; ?>
+            </div>
 
-        <i class="fa-solid fa-hotel fa-2xl" style="color: #ffffff"></i>
-    </nav>
-
+            <i class="fa-solid fa-hotel fa-2xl" style="color: #ffffff"></i>
+        </nav>
+    </header>
     <?= $this->renderSection('content') ?>
 
     <footer class="fimdapag">
@@ -67,9 +73,9 @@
     </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a9f38024b9.js" crossorigin="anonymous"></script>
-    <?= $this->renderSection('js') ?>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a9f38024b9.js" crossorigin="anonymous"></script>
+<?= $this->renderSection('js') ?>
 
 </html>

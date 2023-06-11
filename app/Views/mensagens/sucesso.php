@@ -15,12 +15,13 @@
   </head>
   <body>
     <div class="page">
-      <form action="">
+      <form action="/">
         <div class="headline">
           <h1><?= session()->get('sucesso')['titulo'] ?></h1>
           <p><?= session()->get('sucesso')['mensagem'] ?><br/></p>
+          <p></p>
         </div>
-        <a href="/"><button>Página Inicial</button></a>
+        <button>Página Inicial</button>
       </form>
     </div>
   </body>

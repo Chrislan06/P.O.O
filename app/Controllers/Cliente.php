@@ -103,8 +103,8 @@ class Cliente extends BaseController
     public function salvar($id)
     {
         $params = $this->request->getPost();
-        
-        if(!isset($params['id'])){
+        // dd($params);
+        if(!isset($params['idCliente'])){
             return redirect()->to('/');
         }
         
@@ -137,16 +137,16 @@ class Cliente extends BaseController
 
     public function cancelar($id)
     {
-        $cliente = $this->reservaModel->where('id_cliente', $id)->find()[0];
-        if(isset($cliente)){
+        $cliente = $this->clienteModel->find($id);
+        if(!isset($cliente)){
             return redirect()->to('/');
         }
-        return view('mensagens/cancelar',['titulo'=> 'Cancelar', 'cliente' => $cliente]);
+        return view('mensagens/cancelar',['title'=> 'Cancelar', 'cliente' => $cliente]);
     }
 
     public function delete($id)
     {
         $this->clienteModel->delete($id);
-        return redirect()->to('/');
+        return redirect()->to('/sucesso')->with('sucesso',['titulo' => 'Reserva cancelada','mensagem' => 'A reserva foi cancelada com sucesso clique no botão abaixo para voltar']);
     }
 }

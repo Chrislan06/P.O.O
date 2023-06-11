@@ -15,12 +15,14 @@
   </head>
   <body>
     <div class="page">
-      <form action="<?= isset($cliente) ?  : url_to('realizar.reserva.cliente') ?>" method="post">
+      <form action="<?= isset($cliente) ? url_to('editar.cliente.confirmar',$cliente->id) : url_to('realizar.reserva.cliente') ?>" method="post">
         <div class="headline">
           <h1>Realizar<?= isset($cliente) ? 'Edição' : 'Reserva'?></h1>
         </div>
         <?php if(isset($reserva)): ?>
           <input type="hidden" name="idReserva" value="<?= $reserva->id ?>">
+        <?php elseif (isset($cliente)) : ?>
+          <input type="hidden" name="idCliente" value="<?= $cliente->id ?>">
         <?php endif; ?>
 
         <div class="input-wrapper">
