@@ -22,7 +22,7 @@ class Foto extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('id_quarto', 'quartos', 'id', 'RESTRICT', 'CASCADE', 'fk_reservas_quartos');
+        $this->forge->addForeignKey('id_quarto', 'quartos', 'id', 'RESTRICT', 'CASCADE', 'fk_id_quarto_fotos');
         $this->forge->createTable('fotos',true);
     }
 

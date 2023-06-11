@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AdminModel;
 use App\Models\ClienteModel;
+use App\Models\FotoModel;
 use App\Models\QuartoModel;
 use App\Models\ReservaModel;
 use App\Models\UsuarioModel;
@@ -14,11 +15,13 @@ class Home extends BaseController
     private $quartoModel;
     private $reservaModel;
     private $clienteModel;
+    private $fotoModel;
     public function __construct()
     {
         $this->quartoModel = new QuartoModel();
         $this->reservaModel = new ReservaModel();
         $this->clienteModel = new ClienteModel();
+        $this->fotoModel = new FotoModel();
     }
 
     // Redireciona para a Pagina principal
@@ -32,9 +35,11 @@ class Home extends BaseController
                 $reserva->idCliente = null;
             }
         }
-        return view('PagInicial/pgInicial', ['reservas' => $reservas]);
+        $fotos = $this->fotoModel->findAll();
+        return view('PagInicial/pgInicial', ['reservas' => $reservas,'fotos' => $fotos]);
     }
 
+    // Redireciona para a rota de filtros
     public function filtros()
     {
         $reservas = $this->reservaModel->findAll();
