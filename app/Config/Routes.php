@@ -63,7 +63,7 @@ $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
 
 // Proibir Acesso as funções de admin se não tiver permissões de Admin
 $routes->group('admin',['filter' => 'autenticacaoadmin'], function($routes){
-    $routes->get('cadastro','Admin::cadastro');
+    $routes->get('cadastro','Admin::cadastro',['as' => 'registrar.usuario']);
     $routes->post('cadastrar','Admin::cadastrar');
 });
 

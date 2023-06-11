@@ -34,6 +34,11 @@
                             Pesquisar Reservas
                         </a>
                     </li>
+                    <?php if (session()->has('admin')) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?= url_to('registrar.usuario') ?>" style="color: #ffffff">Registrar Usuario</a>
+                    </li>
+                    <?php endif; ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= url_to('logout') ?>" style="color: #ffffff">Logout</a>
                     </li>
