@@ -17,15 +17,11 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH1.jpg') ?>" class="d-block w-100" alt="Hotel 1">
+            <?php for($i = 1; $i <= 3; $i++) :?>
+            <div class="carousel-item <?= $i === 1 ? 'active': '' ?>">
+              <img src="<?= asset($foto->link."$i.jpg",'quartos') ?>" class="d-block w-100" alt="Hotel <?= $i ?>">
             </div>
-            <div class="carousel-item">
-              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH2.jpg') ?>" class="d-block w-100" alt="Hotel 2">
-            </div>
-            <div class="carousel-item">
-              <img src="<?= base_url('/assets/quartos/solteiro/LHeart/solteiroLH3.jpg') ?>" class="d-block w-100" alt="Hotel 3">
-            </div>
+            <?php endfor ?>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
