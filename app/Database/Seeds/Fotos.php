@@ -52,5 +52,7 @@ class Fotos extends Seeder
                 'id_quarto' => 8
             ],
         ];
+
+        $fTables->insertBatch($fotos);
     }
 }
