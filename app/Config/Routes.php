@@ -53,7 +53,7 @@ $routes->group('/home', ['filter' => 'autenticacao'], function($routes){
 $routes->group('cliente',['filter' => 'autenticacao'], function($routes){
     $routes->get('(:num)','Cliente::index/$1',['as' => 'reservar.cliente']);
     $routes->post('cadastrar','Cliente::cadastrar',['as' => 'realizar.reserva.cliente']);
-    $routes->get('informacoes/(:num)','Cliente::informacoes/$1');
+    $routes->get('informacoes/(:num)','Cliente::informacoes/$1',['as' => 'informacoes.cliente']);
     $routes->get('editar/(:num)','Cliente::editar/$1',['as' => 'editar.cliente']);
     $routes->post('editar/(:num)','Cliente::salvar/$1');
     $routes->get('cancelar/(:num)','Cliente::cancelar/$1',['as'=>'cancelar.cliente']);

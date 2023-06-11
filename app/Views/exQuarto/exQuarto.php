@@ -79,8 +79,8 @@
             <?php if($reserva->verificarReserva() && $reserva->reserva == 'Disponível') : ?>
             <a href="<?= url_to('reservar.cliente',(int)$reserva->id) ?>" class="button" id="reservar">Reservar Quarto</a>
             <?php elseif($reserva->verificarReserva() && $reserva->reserva == 'Reservado') : ?>
-            <a href="/app/Views/cancelarReserva/cancelar.html" class="button" id="cancelar">Cancelar Reserva</a>
-            <a href="/app/Views/informaçõesCliente/informacoesCliente.html" class="button" id="info">Informações de Reserva</a>
+            <a href="<?= url_to('cancelar.cliente',(int)$reserva->idCliente) ?>" class="button" id="cancelar">Cancelar Reserva</a>
+            <a href="<?= url_to('informacoes.cliente',$reserva->idCliente) ?>" class="button" id="info">Informações de Reserva</a>
             <?php endif; ?>
           </div>
 
