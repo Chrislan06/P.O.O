@@ -1,13 +1,13 @@
 <?php
 
 /**
- *  Retorna o cpf válido baseando-se nos digitos mutiplicadores
+ *  Retorna o cpf válido baseando-se nos digitos verificadores
  *  @return bool
  *  @param string $cpf
  * 
  */
 
-// var_dump(cpfValido());
+// var_dump(cpfValido('589.484.553-03'));
 function cpfValido(string $cpf = '681.546.883-60')
 {
     $cpf = str_replace(['.', '-'], ['', ''], $cpf);
@@ -18,14 +18,14 @@ function cpfValido(string $cpf = '681.546.883-60')
     }
     $resto = $somador % 11;
 
-    if (($verificador1 = 11 - $resto) >= 11) {
+    if (($verificador1 = 11 - $resto) >= 10) {
         $verificador1 = 0;
     }
     // die(var_dump($verificador1));
 
     if ($verificador1 != $cpf[9]) {
         return false;
-    }
+    }   
 
     $somador = 0;
     $multiplicador = 11;
@@ -37,7 +37,7 @@ function cpfValido(string $cpf = '681.546.883-60')
     $somador += $verificador1 * 2;
     $resto = $somador % 11;
 
-    if (($verificador2 = 11 - $resto) >= 11) {
+    if (($verificador2 = 11 - $resto) >= 10) {
         $verificador2 = 0;
     }
     var_dump($verificador2);

@@ -14,6 +14,11 @@ class Foto extends Migration
                 'unsigned' => true,
                 'auto_increment' => true
             ],
+            'link' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'null' => false
+            ],
             'id_quarto' => [
                 'type' => 'int',
                 'unsigned' => true,
