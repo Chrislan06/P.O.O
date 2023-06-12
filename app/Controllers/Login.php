@@ -56,7 +56,7 @@ class Login extends BaseController
             $verificarSenha = password_verify($usuario->senha, $usuarioBanco?->senha ?? '');
             // Verificar senha e existência do usuario no banco
             if (!isset($usuarioBanco) || $verificarSenha === false) {
-                $usuario->messages[] = 'Email e/ou senha Incorreto(s)';
+                $usuario->messages['error'] = 'Email e/ou senha Incorreto(s)';
                 throw new InvalidArgumentException();
             }
             unset($usuarioBanco->senha);
@@ -101,10 +101,12 @@ class Login extends BaseController
         if (!isset($params['id'])) {
             return redirect()->to('/');
         }
+        $id = $params['id'];
+        unset($params['id']);
 
         try {
             $usuario = new UsuarioEntity($params);
-            if ($usuario->usuarioValido()) {
+            if (!$usuario->usuarioValido()) {
                 throw new InvalidArgumentException();
             }
 
@@ -114,7 +116,7 @@ class Login extends BaseController
                 'senha' => $usuario->hashSenha(),
             ];
 
-            $resultado = $this->usuarioModel->update($usuario->id, $data);
+            $resultado = $this->usuarioModel->update($id, $data);
 
             if (!$resultado) {
                 foreach ($this->usuarioModel->errors() as $error) {
@@ -157,16 +159,17 @@ class Login extends BaseController
         return view('autenticacao/mudar_senha', ['id' => session()->get('mudarsenha' . $id)['id']]);
     }
 
-    public function senhaNova()
+    public function confirmarSenhaNova()
     {
 
         $params  = $this->request->getPost();
         $id = $params['id'];
-        // dd($params, $id);
+        unset($params['id']);
         try {
             $usuario = new UsuarioEntity($params);
-
-            if ($usuario->usuarioValido()) {
+            // dd($usuario);
+            
+            if (!$usuario->usuarioValido()) {
                 throw new InvalidArgumentException();
             }
 
@@ -175,13 +178,13 @@ class Login extends BaseController
             ];
 
             $resultado = $this->usuarioModel->update($id, $data);
-            dd($resultado);
+            // dd($resultado);
             if (!$resultado) {
                 $usuario->messages['error'] = 'Erro ao mudar a senha';
                 throw new Exception();
             }
-            session()->destroy();
-            return redirect()->to('sucesso')->with('sucesso', ['titulo' => 'Senha Alterada com sucesso', 'mensagem' => 'Clique no link abaixo para voltar']);
+            session()->remove('mudarsenha' . $id);
+            return redirect()->to('/sucesso')->with('sucesso', ['titulo' => 'Senha Alterada com sucesso', 'mensagem' => 'Clique no link abaixo para voltar ao login']);
         } catch (\Exception) {
             return redirect()->back()->with('errors', $usuario->messages);
         }

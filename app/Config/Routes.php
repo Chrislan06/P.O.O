@@ -45,7 +45,7 @@ $routes->get('login/informacoes', 'Login::informacoes', ['filter' => 'autenticac
 $routes->get('login/novasenha', 'Login::novaSenha', ['as' => 'novaSenha']);
 $routes->post('login/autenticarEmail', 'Login::autenticarEmail', ['as' => 'autenticarEmail']);
 $routes->get('login/mudarsenha/(:num)', 'Login::mudarSenha/$1', ['as' => 'mudarSenha']);
-$routes->post('login/senhanova', 'Login::senhaNova', ['as' => 'senhaNova']);
+$routes->post('login/confirmarsenha', 'Login::confirmarSenhaNova', ['as' => 'confirmarSenha']);
 
 // Proibir Acesso a pagina principal e de filtro se não estiver logado
 $routes->group('/home', ['filter' => 'autenticacao'], function ($routes) {
@@ -71,6 +71,7 @@ $routes->group('admin', ['filter' => 'autenticacaoadmin'], function ($routes) {
     $routes->post('cadastrar', 'Admin::cadastrar');
 });
 
+// Rotas para Quartos
 $routes->group('quarto', ['filter' => 'autenticacao'], function ($routes) {
     $routes->get('visualizar/(:num)', 'Quarto::visualizar/$1', ['as' => 'visualizar.quarto']);
 });
