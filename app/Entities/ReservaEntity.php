@@ -49,7 +49,7 @@ class ReservaEntity extends Entity
         return true;
     }
 
-    public function verificarPeriodo($dataCheckIn, $dataCheckOut){
+    public function verificarCheckInOut($dataCheckIn, $dataCheckOut){
         $dataAtual = new DateTime();
         if($dataCheckIn > $dataCheckOut){
             $this->messages['periodo'] = 'Periodo Inválido'; 
@@ -73,6 +73,33 @@ class ReservaEntity extends Entity
 
         $this->attributes['data_check_in'] = $dataCheckIn;
         $this->attributes['data_check_out'] = $dataCheckOut;
+    }
+    
+    public function verificarPeriodo(DateTime $dataInicio, DateTime $dataFim){
+        $dataAtual = new DateTime();
+
+        if($dataInicio == $dataFim){
+            $this->messages['periodo'] = 'Data de Inicio não pode ser igual a data final' ;
+            return;
+        }
+
+        if($dataInicio > $dataFim){
+            $this->messages['periodo'] = 'Periodo Inválido'; 
+            return;
+        }
+
+        if($dataFim < $dataAtual && $dataFim == new DateTime($this->attributes['data_fim'])){
+            $this->messages['periodo'] = 'Não é possível remarcar a reserva para esse dia';
+            return;
+        }
+
+        if($dataInicio < $dataAtual && $dataFim == new DateTime($this->attributes['data_inicio'])){
+            $this->messages['periodo'] = 'Não é possível remarcar a reserva para esse dia';
+            return;
+        }
+
+        $this->attributes['data_inicio'] = $dataInicio;
+        $this->attributes['data_fim'] = $dataFim;
     }
     
     public function calcularPreco(){
