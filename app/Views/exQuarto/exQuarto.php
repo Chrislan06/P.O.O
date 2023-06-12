@@ -40,17 +40,21 @@
 
 
           <div class="calendar">
-
-            <iframe
-        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23D81B60&ctz=America%2FFortaleza&showTabs=0&showCalendars=0&showTz=0&showPrint=0&showDate=1&showNav=1&src=NjQ2ZTQwNzY1Yjc2ZTE1Y2YwZDdlYjBjMTU1ZTQ3Yzc4YjRjZWEwNjRmZGJiMGY4MjNlNjk1YTY5OTk3NGY4YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5"
-        style="border-width: 0"
-        
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
-      <a
-      href="https://calendar.google.com/calendar/u/0?cid=NjQ2ZTQwNzY1Yjc2ZTE1Y2YwZDdlYjBjMTU1ZTQ3Yzc4YjRjZWEwNjRmZGJiMGY4MjNlNjk1YTY5OTk3NGY4YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank"
-      >Editar agenda</a>
+          <form action="<?= url_to('reserva.agendar') ?>" method="post">
+              
+              <h2>Digite a data de início e fim de estadia</h2>
+              
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Início</span>
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Fim</span>
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              
+              <button class="btn btn-danger" type="submit" >Salvar</button>
+            </form>
           </div>
 
             <div class="infos">
@@ -73,10 +77,10 @@
 
           <div class="buttons">
             <?php if($reserva->verificarReserva() && $reserva->reserva == 'Disponível') : ?>
-            <a href="<?= url_to('reservar.cliente',(int)$reserva->id) ?>" class="button" id="reservar">Reservar Quarto</a>
+            <a href="<?= url_to('reservar.cliente',(int)$reserva->id) ?>" class="btn btn-primary btn-lg" id="reservar">Reservar Quarto</a>
             <?php elseif($reserva->verificarReserva() && $reserva->reserva == 'Reservado') : ?>
-            <a href="<?= url_to('cancelar.cliente',(int)$reserva->idCliente) ?>" class="button" id="cancelar">Cancelar Reserva</a>
-            <a href="<?= url_to('informacoes.cliente',$reserva->idCliente) ?>" class="button" id="info">Informações de Reserva</a>
+            <a href="<?= url_to('cancelar.cliente',(int)$reserva->idCliente) ?>" class="btn btn-primary btn-lg" id="cancelar">Cancelar Reserva</a>
+            <a href="<?= url_to('informacoes.cliente',$reserva->idCliente) ?>" class="btn btn-primary btn-lg" id="info">Informações de Reserva</a>
             <?php endif; ?>
           </div>
 

@@ -81,6 +81,12 @@ $routes->get('/teste', 'Test::test');
 
 // Rota para mensagens
 $routes->get('/sucesso', 'Sucesso::index');
+$routes->get('/erro', 'Erro::index');
+
+// Rota para reserva
+$routes->group('reserva',['filter' => 'autenticacao'],function ($routes){
+    $routes->post('agendar','Reserva::agendar',['reserva.agendar']);
+});
 
 /*
  * --------------------------------------------------------------------

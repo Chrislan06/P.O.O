@@ -128,10 +128,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.nav-link {
-  font-weight: 750;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -139,7 +136,19 @@ body {
 }
 
 nav {
-  background-color: var(--bs-code-color);
+  font-weight: 750;
+  background-color: #dc3545;
+}
+
+nav i {
+  display: flex;
+  text-align: right;
+  margin-right: 20px;
+}
+
+nav a:hover{
+  transition: 0.5s;
+  opacity: 0.7;
 }
 
 img {
@@ -168,48 +177,17 @@ img {
 
 .calendar {
   margin-top: 5rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 }
 
-.calendar iframe {
-  width: 500px;
-  height: 300px;
-}
-
-.calendar a {
-  all: unset;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10px;
-  width: 150px;
-  padding: 1rem 1rem;
-
-  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
-  border-radius: 0.4rem;
-
-  font-weight: bold;
-  line-height: 2.4rem;
-
+.calendar .input-group {
+  margin-bottom: 10px;
+  width: 60%;
   color: white;
-  margin-top: 1rem;
 }
 
-.calendar a:focus {
-  outline: 2px solid black;
-  border-radius: 0.4rem;
-}
-
-.calendar a:hover {
-  background: linear-gradient(
-    103.66deg,
-    rgba(156, 32, 158, 0.83) 0.02%,
-    rgba(205, 26, 59, 0.83) 100%
-  );
-  cursor: pointer;
+.calendar button {
+  width: 25%;
 }
 
 .infos {
@@ -236,40 +214,9 @@ img {
   justify-content: center;
 }
 
-.button {
-  all: unset;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-
-  background: linear-gradient(103.66deg, #9c209e 0.02%, #cd1a3b 100%);
-  border-radius: 10px;
-
-  width: 100%;
-
-  font-weight: bold;
-  line-height: 2.4rem;
-
-  color: white;
+.buttons a {
   margin-block: 10px;
   margin-top: 20px;
-}
-
-.button:focus {
-  outline: 2px solid black;
-  border-radius: 0.4rem;
-}
-
-.button:hover {
-  background: linear-gradient(
-    103.66deg,
-    rgba(156, 32, 158, 0.83) 0.02%,
-    rgba(205, 26, 59, 0.83) 100%
-  );
-  cursor: pointer;
 }
 
 .icon {
@@ -285,7 +232,7 @@ footer {
   width: 100%;
   margin-top: 1.5rem;
   margin-bottom: 0;
-  background-color: var(--bs-code-color);
+  background-color: #dc3545;
 }
 
 .footer-content {

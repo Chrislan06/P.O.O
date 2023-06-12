@@ -7,12 +7,16 @@
  * 
  */
 
-// var_dump(cpfValido('589.484.553-03'));
+// var_dump(cpfValido(''));
 function cpfValido(string $cpf = '681.546.883-60')
 {
     $cpf = str_replace(['.', '-'], ['', ''], $cpf);
     $somador = 0;
     $multiplicador = 10;
+    if($cpf == str_repeat($cpf[0],11)){
+        return false;
+    }
+
     for ($i = 0; $i < 9; $i++) {
         $somador += (($multiplicador - $i) * $cpf[$i]);
     }
@@ -40,7 +44,7 @@ function cpfValido(string $cpf = '681.546.883-60')
     if (($verificador2 = 11 - $resto) >= 10) {
         $verificador2 = 0;
     }
-    var_dump($verificador2);
+    // var_dump($verificador2);
     if ($verificador2 != $cpf[10]) {
         return false;
     }
