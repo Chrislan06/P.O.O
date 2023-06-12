@@ -1,21 +1,14 @@
 <?php
 
 /**
- * The goal of this file is to allow developers a location
- * where they can overwrite core procedural functions and
- * replace them with their own. This file is loaded during
- * the bootstrap process and is called during the framework's
- * execution.
- *
- * This can be looked at as a `master helper` file that is
- * loaded early on, and may also contain additional functions
- * that you'd like to use throughout your entire application
- *
- * @see: https://codeigniter.com/user_guide/extending/common.html
+ *  Retorna o cpf válido baseando-se nos digitos mutiplicadores
+ *  @return bool
+ *  @param string $cpf
+ * 
  */
 
-
-function cpfValido(string $cpf)
+// var_dump(cpfValido());
+function cpfValido(string $cpf = '681.546.883-60')
 {
     $cpf = str_replace(['.', '-'], ['', ''], $cpf);
     $somador = 0;
@@ -25,7 +18,7 @@ function cpfValido(string $cpf)
     }
     $resto = $somador % 11;
 
-    if (($verificador1 = 11 - $resto) > 11) {
+    if (($verificador1 = 11 - $resto) >= 11) {
         $verificador1 = 0;
     }
     // die(var_dump($verificador1));
@@ -44,12 +37,35 @@ function cpfValido(string $cpf)
     $somador += $verificador1 * 2;
     $resto = $somador % 11;
 
-    if (($verificador2 = 11 - $resto) > 11) {
+    if (($verificador2 = 11 - $resto) >= 11) {
         $verificador2 = 0;
     }
-
+    var_dump($verificador2);
     if ($verificador2 != $cpf[10]) {
         return false;
     }
     return true;
+}
+
+/**
+ * Função responsável por facilitar o retorno do caminho dos assets da aplicação
+ * @param string $file
+ * @param string $assetDir
+ * @return string
+ */
+
+function asset(string $file = '', string $assetDir = '')
+{
+    return base_url('assets/' . $assetDir . '/' . $file);
+}
+
+/**
+ * Retorna a diferença em dias de duas datas
+ * @return float
+ */
+function diferencaEmDias($dataInicial, $dataFinal)
+{
+    $diferenca = strtotime($dataFinal) - strtotime($dataInicial);
+    $dias = floor($diferenca / (60 * 60 * 24));
+    return $dias;
 }

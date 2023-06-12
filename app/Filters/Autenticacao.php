@@ -25,7 +25,7 @@ class Autenticacao implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->has('usuario') && !session()->has('admin')) {
+        if (!session()->has('usuario')) {
             return redirect()->to('/login');
         }
     }
