@@ -20,7 +20,7 @@ class Login extends BaseController
     {
         $this->usuarioModel = new UsuarioModel();
     }
-    
+
     /*
         Redirecionando para a página de login se não estiver logado 
     */
@@ -80,31 +80,31 @@ class Login extends BaseController
 
     /*
         Retorna tela de informações de Login para o Usuário
-    */  
+    */
     public function informacoes()
     {
-        if(!session()->has('usuario')){
+        if (!session()->has('usuario')) {
             return redirect()->to('/');
         }
-        
+
         return view('informacoesLogin/informacoesLogin', ['titulo' => 'Informações']);
     }
 
     public function salvar()
     {
-        if(!session()->has('usuario')){
+        if (!session()->has('usuario')) {
             return redirect()->to('/');
         }
 
         $params = $this->request->getPost();
-        
-        if(!isset($params['id'])){
+
+        if (!isset($params['id'])) {
             return redirect()->to('/');
         }
-        
+
         try {
             $usuario = new UsuarioEntity($params);
-            if($usuario->usuarioValido()){
+            if ($usuario->usuarioValido()) {
                 throw new InvalidArgumentException();
             }
 
@@ -114,9 +114,9 @@ class Login extends BaseController
                 'senha' => $usuario->hashSenha(),
             ];
 
-            $resultado = $this->usuarioModel->update($usuario->id,$data);
-            
-            if(!$resultado){
+            $resultado = $this->usuarioModel->update($usuario->id, $data);
+
+            if (!$resultado) {
                 foreach ($this->usuarioModel->errors() as $error) {
                     $usuario->messages[] = $error;
                 }
@@ -125,8 +125,65 @@ class Login extends BaseController
 
             return redirect()->to('/');
         } catch (\InvalidArgumentException) {
-            return redirect()->to('/usuario/editar/'.$usuario['id'])->with('errors',$usuario->messages);
+            return redirect()->to('/usuario/editar/' . $usuario['id'])->with('errors', $usuario->messages);
         }
-        
+    }
+
+    public function novaSenha()
+    {
+        return view('autenticacao/esqueci_senha');
+    }
+
+    public function autenticarEmail()
+    {
+        $emailEnviado = $this->request->getPost('email');
+        $usuario = $this->usuarioModel->where('email', $emailEnviado)->find();
+        // dd($usuario);
+        if (empty($usuario)) {
+            return redirect()->to('login/novasenha');
+        }
+        $usuario = $usuario[0];
+        session()->set('mudarsenha' . $usuario->id, ['id' => $usuario->id]);
+
+        return view('autenticacao/email_autenticado', ['id' => (int)$usuario->id]);
+    }
+
+    public function mudarSenha($id)
+    {
+        if (!session()->has('mudarsenha' . $id)) {
+            return redirect()->to('/');
+        }
+
+        return view('autenticacao/mudar_senha', ['id' => session()->get('mudarsenha' . $id)['id']]);
+    }
+
+    public function senhaNova()
+    {
+
+        $params  = $this->request->getPost();
+        $id = $params['id'];
+        // dd($params, $id);
+        try {
+            $usuario = new UsuarioEntity($params);
+
+            if ($usuario->usuarioValido()) {
+                throw new InvalidArgumentException();
+            }
+
+            $data = [
+                'senha' => $usuario->hashSenha(),
+            ];
+
+            $resultado = $this->usuarioModel->update($id, $data);
+            dd($resultado);
+            if (!$resultado) {
+                $usuario->messages['error'] = 'Erro ao mudar a senha';
+                throw new Exception();
+            }
+            session()->destroy();
+            return redirect()->to('sucesso')->with('sucesso', ['titulo' => 'Senha Alterada com sucesso', 'mensagem' => 'Clique no link abaixo para voltar']);
+        } catch (\Exception) {
+            return redirect()->back()->with('errors', $usuario->messages);
+        }
     }
 }
