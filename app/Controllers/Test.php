@@ -18,7 +18,7 @@ class Test extends BaseController
         //     return redirect()->to('login/novasenha');
         // }
         // $usuario = $usuario[0];
-        // $email = \Config\Services::email();
+        $email = \Config\Services::email();
 
         // $config = [
         //     'protocol' => 'smtp',
@@ -32,15 +32,37 @@ class Test extends BaseController
         // $email->initialize($config);
         // dd($email);
 
+        $config = [
+            'protocol' => 'smtp',
+            'SMTPHost' => 'sandbox.smtp.mailtrap.io',
+            'SMTPUser' => 'f97aab8dc8d19b',
+            'SMTPPass' => '9582e95ce0c6ae ',
+            'SMTPPORT' => 25,
+            'SMTPAuth' => true,
+            'SMTPCrypto' => '',
+            'SMTPUsername' => '', // Remova essa linha
+            'SMTPPassword' => '' // Remova essa linha
+        ];
+
+        $email->initialize($config);
+        // dd($email);
+
+        $email->setFrom('machadochrislan@gmail.com','teste');
+        $email->setTo('machadochrislan@gmail.com');
+        $email->setSubject('Assunto Teste');
+        $email->setMessage('Mensagem Teste');
+
+        #
+
         // $email->setFrom($emailEnviado, $usuario->nome);
         // $email->setTo('chrislan06@gmail.com');
         // $email->setSubject('Atualizar senha');
         // $email->setMessage('Clique no link para atualizar sua senha: <a href ="' . base_url('login/mudarsenha/') . $usuario->id . '">' . base_url('login/mudarsenha/') . $usuario->id . '</a>');
-        // // dd($email);
+        // dd($email);
 
-        // $enviado = $email->send();
+        $enviado = $email->send();
         // // dd($enviado);
-        // var_dump($email->printDebugger());
+        var_dump($email->printDebugger());
         // die();
         // if (!$enviado) {
         // }

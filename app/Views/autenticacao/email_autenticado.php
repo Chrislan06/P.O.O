@@ -17,7 +17,7 @@
     <form action="<?= url_to('mudarSenha', $id) ?>">
       <div class="headline">
         <h1>Email autenticado com sucesso</h1>
-        <p>A senha foi enviada para o email digitado.<br /></p>
+        <p>Clique aqui em baixo para mudar a senha <br /></p>
         <p>Confira a senha e tente o login novamente.</p>
       </div>
       <button>Mudar senha</button>

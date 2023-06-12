@@ -129,7 +129,7 @@ class Cliente extends BaseController
                 throw new InvalidArgumentException();
             }
 
-            return redirect()->to('/sucesso')->with('sucesso' , ['titulo' => 'Editado com sucesso','mensagem' => 'A reserva foi editada com sucesso clique no botão abaixo para voltar']);
+            return redirect()->to('/sucesso')->with('sucesso' , ['titulo' => 'Editado com sucesso','mensagem' => 'A reserva foi editada com sucesso']);
         } catch (Exception) {
             return redirect()->to('/cliente/editar/' . $id)->with('errors', $cliente->messages);
         }
@@ -147,6 +147,6 @@ class Cliente extends BaseController
     public function delete($id)
     {
         $this->clienteModel->delete($id);
-        return redirect()->to('/sucesso')->with('sucesso',['titulo' => 'Reserva cancelada','mensagem' => 'A reserva foi cancelada com sucesso clique no botão abaixo para voltar']);
+        return redirect()->to('/sucesso')->with('sucesso',['titulo' => 'Reserva cancelada','mensagem' => 'A reserva foi cancelada com sucesso']);
     }
 }
