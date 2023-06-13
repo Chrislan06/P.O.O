@@ -27,7 +27,7 @@ class ReservaEntity extends Entity
     public $cliente;
     public $quarto;
     public $reserva;
-    public $messages;
+    public $messages = [];
     protected $dates   = ['criado_em', 'atualizado_em', 'deleted_at'];
     protected $casts   = [];
 
@@ -35,10 +35,12 @@ class ReservaEntity extends Entity
     public function verificarReserva()
     {
         $dataAtual = new DateTime();
-        if($dataAtual > new DateTime($this->attributes['data_fim']) || new DateTime($this->attributes['data_inicio']) > new DateTime($this->attributes['data_fim'])){
+        if($dataAtual > new DateTime($this->attributes['data_fim']) || new DateTime($this->attributes['data_inicio']) > new DateTime($this->attributes['data_fim']) || $dataAtual < new DateTime($this->attributes['data_inicio'])){
             $this->reserva = 'Indisponível';
             return false;
         }
+
+        
 
         if(isset($this->attributes['id_cliente'])){
             $this->reserva = 'Reservado';
@@ -77,9 +79,11 @@ class ReservaEntity extends Entity
     
     public function verificarPeriodo(DateTime $dataInicio, DateTime $dataFim){
         $dataAtual = new DateTime();
+        $dataAtualSemHoras = new DateTime($dataAtual->format('Y-m-d').' 00:00:00');
+        // die(var_dump($dataAtualSemHoras));
 
-        if($dataInicio == $dataFim){
-            $this->messages['periodo'] = 'Data de Inicio não pode ser igual a data final' ;
+        if($dataInicio == $dataFim ){
+            $this->messages['periodo'] = 'Data de inicio não pode ser igual a data final' ;
             return;
         }
 
@@ -88,12 +92,12 @@ class ReservaEntity extends Entity
             return;
         }
 
-        if($dataFim < $dataAtual && $dataFim == new DateTime($this->attributes['data_fim'])){
+        if($dataFim < $dataAtualSemHoras && !($dataFim == new DateTime($this->attributes['data_fim']))){
             $this->messages['periodo'] = 'Não é possível remarcar a reserva para esse dia';
             return;
         }
 
-        if($dataInicio < $dataAtual && $dataFim == new DateTime($this->attributes['data_inicio'])){
+        if($dataInicio < $dataAtualSemHoras && !($dataInicio == new DateTime($this->attributes['data_inicio']))){
             $this->messages['periodo'] = 'Não é possível remarcar a reserva para esse dia';
             return;
         }
@@ -106,5 +110,10 @@ class ReservaEntity extends Entity
        $tempoEmDias = diferencaEmDias($this->attributes['data_check_in'], $this->attributes['data_check_out']);     
 
        return $this->quarto->preco * $tempoEmDias;
+    }
+
+    public function retornarData(DateTime $data = null,$format = 'Y-m-d')
+    {
+        return $data->format($format);
     }
 }

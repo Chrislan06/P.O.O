@@ -85,7 +85,7 @@ $routes->get('/erro', 'Erro::index');
 
 // Rota para reserva
 $routes->group('reserva',['filter' => 'autenticacao'],function ($routes){
-    $routes->post('agendar','Reserva::agendar',['reserva.agendar']);
+    $routes->post('agendar','Reserva::agendar',['as' =>'reserva.agendar']);
 });
 
 /*

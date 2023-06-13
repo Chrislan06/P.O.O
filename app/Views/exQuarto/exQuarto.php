@@ -41,19 +41,19 @@
 
           <div class="calendar">
           <form action="<?= url_to('reserva.agendar') ?>" method="post">
-              
+              <input type="hidden" name="idReserva" value="<?= $reserva->id ?>">
               <h2>Digite a data de início e fim de estadia</h2>
               
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Início</span>
-                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="dataInicio" value="<?=$reserva->retornarData(new DateTime($reserva->dataInicio)) ?>">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Fim</span>
-                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="dataFim" value="<?= $reserva->retornarData(new DateTime($reserva->dataFim)) ?>">
               </div>
               
-              <button class="btn btn-danger" type="submit" >Salvar</button>
+              <button class="btn btn-danger" type="submit">Salvar</button>
             </form>
           </div>
 
