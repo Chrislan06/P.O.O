@@ -10,54 +10,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/registro.css" />
+    <title>Senha</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/registro.css') ?>" />
   </head>
   <body>
     <div id="page" class="flex">
-      <img src="assets/images/loginImage.jpg" alt="Imagem colorida" />
+      <img src="<?= base_url('assets/images/loginImage.jpg') ?>" alt="Imagem colorida" />
       <div>
         <main>
           <div class="headline">
-            <h1>Cadastre-se Agora</h1>
-            <p>Realize o cadastro para utilizar o SHO.</p>
+            <h1>Mude sua senha</h1>
+            <p>Coloque a nova senha abaixo</p>
           </div>
-          <form action="/registro/registrado/registrado.html">
-            <div class="input-wrapper">
-              <label for="name">Nome</label>
-              <input
-                id="name"
-                type="name"
-                name="name"
-                required
-                placeholder="Digite seu nome"
-              />
-              <div class="error" id="name-required-error">
-                O nome é obrigatório
-              </div>
-            </div>
-
-            <div class="input-wrapper">
-              <label for="email">E-mail</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                required
-                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$"
-                placeholder="Digite seu e-mail"
-              />
-              <div class="error" id="email-required-error">
-                O e-mail é obrigatório
-              </div>
-              <div class="error">Digite um Email válido</div>
-            </div>
-
+          <form action="<?= url_to('confirmarSenha') ?>" method="post">
+            <input type="hidden" name="id" value="<?= $id ?>">
             <div class="input-wrapper">
               <label for="senha"> Senha </label>
               <input
                 type="password"
                 id="senha"
+                name="senha"
                 required
                 placeholder="Digite sua senha"
               />
@@ -69,14 +41,14 @@
                 onclick="tooglePassword()"
                 class="eye"
                 id="eye"
-                src="assets/images/eye-off.svg"
+                src="<?= base_url('assets/images/eyes/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePassword()"
                 class="eye hide"
                 id="eye-hide"
-                src="assets/images/eye.svg"
+                src="<?= base_url('assets/images/eyes/eye.svg') ?>"
                 alt=""
               />
             </div>
@@ -97,29 +69,35 @@
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo"
                 id="eyeTwo"
-                src="assets/images/eye-off.svg"
+                src="<?= base_url('assets/images/eyes/eye-off.svg') ?>"
                 alt=""
               />
               <img
                 onclick="tooglePasswordTwo()"
                 class="eyeTwo hide"
                 id="eyeTwo-hide"
-                src="assets/images/eye.svg"
+                src="<?= base_url('assets/images/eyes/eye.svg') ?>"
                 alt=""
               />
             </div>
 
-            <button type="submit" id="cadastrobtn">Cadastrar</button>
-
-            <div class="login-account">
-              Já tem uma conta? Faça o
-              <a href="/login/index.html">Login</a>
-            </div>
+            <button type="submit" id="cadastrobtn">Confirmar</button>
+            <!-- Redirecionando para A main -->
+            <?= anchor('/','Voltar') ?>
+            <!--  -->
           </form>
+          <!-- Apresentando mensagens de erro -->
+          <?php if(session()->has('errors')): ?>
+            <ul>
+              <?php foreach(session()->getFlashdata('errors') as $error): ?>
+                <li><?= $error ?></li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
         </main>
       </div>
     </div>
 
-    <script src="assets/js /registro.js"></script>
+    <script src="<?= base_url('assets/js/registro.js') ?>"></script>
   </body>
 </html>

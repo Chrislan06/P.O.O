@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\Autenticacao;
+use App\Filters\AutenticacaoAdmin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -23,6 +24,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'autenticacao' => Autenticacao::class,
+        'autenticacaoadmin' => AutenticacaoAdmin::class,
     ];
 
     /**

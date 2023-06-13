@@ -2,45 +2,56 @@
 
 namespace App\Controllers;
 
+use App\Models\AdminModel;
+use App\Models\ClienteModel;
+use App\Models\FotoModel;
+use App\Models\QuartoModel;
+use App\Models\ReservaModel;
 use App\Models\UsuarioModel;
+use DateTime;
 
 class Home extends BaseController
-{   
+{
+    private $quartoModel;
+    private $reservaModel;
+    private $clienteModel;
+    private $fotoModel;
+    public function __construct()
+    {
+        $this->quartoModel = new QuartoModel();
+        $this->reservaModel = new ReservaModel();
+        $this->clienteModel = new ClienteModel();
+        $this->fotoModel = new FotoModel();
+    }
+
     // Redireciona para a Pagina principal
     public function index()
     {
-       echo anchor('login/logout','logout');
-       echo anchor('');
+        $reservas = $this->reservaModel->findAll();
+        foreach ($reservas as $reserva) {
+            $reserva->quarto = $this->quartoModel->find($reserva->idQuarto);
+            if(!$reserva->verificarReserva() && isset($reserva->idCliente)){
+                $this->clienteModel->delete($reserva->idCliente);
+                $reserva->idCliente = null;
+            }
+        }
+        $fotos = $this->fotoModel->findAll();
+        // dd($fotos[7]->id_quarto, $reservas[0]->idQuarto);
+        return view('PagInicial/pgInicial', ['reservas' => $reservas,'fotos' => $fotos]);
     }
 
-    private function inserirUsuario()
+    // Redireciona para a rota de filtros
+    public function filtros()
     {
-        $usuarioModel = new UsuarioModel();
-        $result = $usuarioModel->insert([
-            'nome' => 'Chrislan',
-            'email' => 'chrislan@gmail.com',
-            'senha' => password_hash('12345678',PASSWORD_ARGON2ID)
-        ]);
-        
-        if($result){
-            echo 'Inserido';
+        $reservas = $this->reservaModel->findAll();
+        foreach ($reservas as $reserva) {
+            $reserva->quarto = $this->quartoModel->find($reserva->idQuarto);
+            if(!$reserva->verificarReserva() && isset($reserva->idCliente)){
+                $this->clienteModel->delete($reserva->idCliente);
+                $reserva->idCliente = null;
+            }
         }
-    }
-
-    public function teste()
-    {
-        $email = 'Chrislan06@gmail.com';
-        if(empty($email)){
-            echo 'Preencha o campo de Email';
-            die();
-        }
-        // var_dump(preg_match('/^([a-zA-Z]{3,})*(.)+@+([a-zA-z]{3,})+\.+com*(\.*[a-z]{1,3})$/',$email));
-        if(!preg_match('/^([a-zA-Z]{3,})*(.)+@+([a-zA-z]{3,})+\.+com*(\.*[a-z]{1,3})$/',$email)){
-            echo 'email Inválido';
-        }else{
-            echo 'email valido';
-        }
-        
+        $fotos = $this->fotoModel->findAll();
+        return view('paginadeFiltros/pagFiltro',['reservas' => $reservas,'filtro' => true,'fotos' => $fotos]);
     }
 }
-

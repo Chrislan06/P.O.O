@@ -23,8 +23,15 @@ class UsuarioModel extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
+    protected $validationRules      = [
+        'email' => 'valid_email|is_unique[usuarios.email]',
+    ];
+    protected $validationMessages   = [
+        'email' => [
+            'is_unique' => 'O email já está sendo usado por outra pessoa',
+            'valid_email' => 'O email tem que ser válido'
+        ]
+    ];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
 
