@@ -64,7 +64,7 @@ class Cliente extends BaseController
 
         try {
             $cliente = new ClienteEntity($params);
-
+            // dd($cliente);
             if (count($cliente->messages) > 0) {
                 throw new InvalidArgumentException();
             }
@@ -107,6 +107,7 @@ class Cliente extends BaseController
         if(!isset($params['idCliente'])){
             return redirect()->to('/');
         }
+        
         
         $params['dataNascimento'] = new DateTime($params['dataNascimento']);
         // dd($data);

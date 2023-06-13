@@ -35,7 +35,8 @@ class ReservaEntity extends Entity
     public function verificarReserva()
     {
         $dataAtual = new DateTime();
-        if($dataAtual > new DateTime($this->attributes['data_fim']) || new DateTime($this->attributes['data_inicio']) > new DateTime($this->attributes['data_fim']) || $dataAtual < new DateTime($this->attributes['data_inicio'])){
+        $dataAtualSemHoras = new DateTime($dataAtual->format('Y-m-d').' 00:00:00');
+        if($dataAtualSemHoras > new DateTime($this->attributes['data_fim']) || new DateTime($this->attributes['data_inicio']) > new DateTime($this->attributes['data_fim']) || $dataAtualSemHoras < new DateTime($this->attributes['data_inicio'])){
             $this->reserva = 'Indisponível';
             return false;
         }

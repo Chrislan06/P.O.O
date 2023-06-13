@@ -79,11 +79,11 @@ $routes->group('quarto', ['filter' => 'autenticacao'], function ($routes) {
 // Rotas para Testes
 $routes->get('/teste', 'Test::test');
 
-// Rota para mensagens
+// Rota para Mensagens
 $routes->get('/sucesso', 'Sucesso::index');
 $routes->get('/erro', 'Erro::index');
 
-// Rota para reserva
+// Rota para Reservas
 $routes->group('reserva',['filter' => 'autenticacao'],function ($routes){
     $routes->post('agendar','Reserva::agendar',['as' =>'reserva.agendar']);
 });

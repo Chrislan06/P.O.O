@@ -62,6 +62,11 @@ class ClienteEntity extends Entity
             return;
         }
 
+        if (!preg_match('/^[0-9]*$/',$rg)){
+            $this->messages['rg'] = 'O campo de rg só aceita números';
+            return;
+        }
+
         $this->attributes['rg'] = $rg;
     }
 
@@ -83,7 +88,8 @@ class ClienteEntity extends Entity
         }
 
         // Verifica se o titular é Possui mais de 18 anos
-        if ($dataAtual->diff($dataNascimento)->y < 18) {
+        // if ($dataAtual->diff($dataNascimento)->y < 18) {
+        if (retornaIdade($dataNascimento) < 18) {
             $this->messages['dataNascimento'] = 'Não permitimos clientes com menos de 18 anos';
             return;
         }
@@ -117,8 +123,8 @@ class ClienteEntity extends Entity
     public function calcularIdade(): int
     {
         $dataAtual = new DateTime();
-        $idade = $dataAtual->diff($this->attributes['dataNascimento']);
-
+        // $idade = $dataAtual->diff($this->attributes['dataNascimento']);
+        $idade = retornaIdade($this->attributes['dataNascimento']);
         return $idade;
     }
 

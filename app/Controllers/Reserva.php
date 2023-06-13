@@ -27,10 +27,18 @@ class Reserva extends BaseController
         }
 
         $reserva = $this->reservaModel->find($id);
+        if(!isset($reserva)){
+           return redirect()->to('/'); 
+        }
+        $reserva->verificarReserva();
         $dataInicio = new DateTime($params['dataInicio']);
         $dataFim = new DateTime($params['dataFim']);
         // dd($dataInicio,$dataFim);
         try {
+            if($reserva->reserva == 'Reservado'){
+                $reserva->messages['erro'] = 'Não é possivel alterar o periódo por causa da reserva'; 
+                throw new InvalidArgumentException();
+            }
             $reserva->verificarPeriodo($dataInicio,$dataFim);
             // dd($reserva);
             if(count($reserva->messages)){
