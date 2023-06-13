@@ -89,7 +89,7 @@ class ReservaEntity extends Entity
         }
 
         if($dataInicio > $dataFim){
-            $this->messages['periodo'] = 'Periodo Inválido'; 
+            $this->messages['periodo'] = 'Período Inválido'; 
             return;
         }
 

@@ -36,7 +36,7 @@ class Reserva extends BaseController
         // dd($dataInicio,$dataFim);
         try {
             if($reserva->reserva == 'Reservado'){
-                $reserva->messages['erro'] = 'Não é possivel alterar o periódo por causa da reserva'; 
+                $reserva->messages['erro'] = 'Não é possivel alterar o período por causa da reserva'; 
                 throw new InvalidArgumentException();
             }
             $reserva->verificarPeriodo($dataInicio,$dataFim);
